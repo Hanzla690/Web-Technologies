@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Poppins, sans-serif;
+}
+
+header {
+  height: 20vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header .logo {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.header-middle {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid rgba(129, 125, 125, 0.3);
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 0.9em;
+}
+
+.category-section {
+  display: flex;
+  gap: 30px;
+  cursor: pointer;
+}
+
+.search-section {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.search-section input {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.search-section i {
+  font-size: 2em;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 2em;
+}
+
+.header-right i{
+    transition: all 0.3s;
+}
+
+.header-right i:hover {
+  color: #2453d4;
+  cursor: pointer;
+}
+
+nav {
+  background-color: #2453d4;
+  color: white;
+  padding: 0 80px;
+  height: 10vh;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  height: 100%;
+}
+
+nav ul li {
+  list-style: none;
+  font-size: 0.9em;
+  font-weight: bold;
+  cursor: pointer;
+  height: 100%;
+  padding: 23px 20px 0 20px;
+  transition: all 0.3s;
+}
+
+nav ul li:hover {
+  background-color: #1e39df;
+}
+
+.carousel-inner {
+  height: 70vh;
+}
+
+.carousel-item {
+  background-color: #f3f6fb;
+  height: 100%;
+}
+
+.carousel-item-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.carousel-item-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 15px;
+  margin-left: 100px;
+}
+
+.carousel-item-info div {
+  font-weight: bold;
+  font-size: 1.8em;
+}
+
+.carousel-item-info button {
+  background-color: #2453d4;
+}
+
+.carousel-item-info button:hover {
+  background-color: #1e39df;
+}
+
+.carousel-item img {
+  width: 683px;
+  height: 405px;
+  object-fit: contain;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  filter: invert(100%);
+}
