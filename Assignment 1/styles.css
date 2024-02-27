@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #2a354b;
+  --secondary: #eff0f2;
+}
+
+body {
+  position: relative;
+  background-color: black;
+  font-family: Poppins, sans-serif;
+  overflow: hidden;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 30%;
+  width: 45vw;
+  height: 100vh;
+  background-color: white;
+}
+
+.top {
+  background-color: var(--primary);
+  height: 23%;
+  width: 100%;
+  color: white;
+}
+
+.title-box {
+  padding: 20px 0 10px 20px;
+  width: 40%;
+  text-align: center;
+}
+
+.title-box > h2 {
+  font-size: 20px;
+  font-weight: normal;
+}
+section {
+  display: flex;
+  height: 100%;
+}
+
+.left {
+  width: 65%;
+  color: var(--primary);
+}
+
+.about-me {
+  margin-top: 30px;
+}
+
+.content-section {
+  margin-top: 10px;
+}
+
+.content-section ul {
+  margin: 8px 0 0 50px;
+}
+
+.content-section ul li {
+  font-size: 0.9em;
+}
+
+.education ul li {
+  margin-bottom: 6px;
+}
+
+.heading {
+  width: 70%;
+  padding: 5px 38px;
+  background-color: var(--secondary);
+  color: var(--primary);
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  margin-bottom: 8px;
+}
+
+.content {
+  font-size: 0.8em;
+  padding: 0 38px;
+}
+
+.project-desc {
+  margin-left: 24px;
+  font-size: 0.75em;
+}
+
+.right {
+  width: 35%;
+  height: 110%;
+  background-color: var(--secondary);
+  color: var(--primary);
+  padding: 20px 30px;
+  position: relative;
+  top: -46px;
+  border-top-left-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.right img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.details {
+  margin-top: 10px;
+}
+
+.details div {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.personal-details > span,
+.skills > span {
+  font-size: 0.9em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.personal-details div span {
+  font-size: 0.7em;
+}
+
+.skills ul {
+  margin: 10px 0 0 20px;
+}
+
+.skills li {
+  font-size: 0.85em;
+  margin-bottom: 8px;
+}
