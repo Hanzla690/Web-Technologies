@@ -13,6 +13,7 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding: 0 40px;
 }
 
 header .logo {
@@ -36,6 +37,16 @@ header .logo {
   cursor: pointer;
 }
 
+.category-section span {
+  transition: all 0.4s;
+  font-size: 1.2em;
+}
+
+.category-section:hover span {
+  transform: rotate(90deg);
+  color: #2453d4;
+}
+
 .search-section {
   display: flex;
   align-items: center;
@@ -49,7 +60,18 @@ header .logo {
 }
 
 .search-section i {
+  position: relative;
   font-size: 2em;
+  padding: 7px;
+  border-radius: 10px;
+  transition: color 0.4s, background-position 0.4s;
+  background: linear-gradient(to bottom, transparent 0 50%, #2453d4 50% 100%);
+  background-size: 100% 200%;
+}
+
+.search-section i:hover {
+  background-position: 50% 100%;
+  color: white;
 }
 
 .header-right {
@@ -59,13 +81,18 @@ header .logo {
   font-size: 2em;
 }
 
-.header-right i{
-    transition: all 0.3s;
+.header-right i {
+  padding: 7px;
+  border-radius: 10px;
+  background: linear-gradient(to top, #2453d4 0 50%, transparent 50% 100%);
+  background-size: 100% 200%;
+  transition: color 0.4s, background-position 0.4s;
 }
 
 .header-right i:hover {
-  color: #2453d4;
+  color: white;
   cursor: pointer;
+  background-position: 100% 100%;
 }
 
 nav {
@@ -94,6 +121,10 @@ nav ul li {
 
 nav ul li:hover {
   background-color: #1e39df;
+}
+
+.carousel {
+  margin-bottom: 60px;
 }
 
 .carousel-inner {
@@ -142,4 +173,319 @@ nav ul li:hover {
 .carousel-control-next,
 .carousel-control-prev {
   filter: invert(100%);
+}
+
+.smart-cards {
+  padding: 0 80px;
+  margin-bottom: 60px;
+  display: flex;
+  gap: 40px;
+}
+
+.smart-cards a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.smart-card {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  background-color: #f3f6fb;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 3px gray;
+  cursor: pointer;
+}
+
+.smart-card:hover .smart-card-left span {
+  background-position: 0 100%;
+  color: white;
+}
+
+.smart-card img {
+  width: 100%;
+  min-width: 110px;
+}
+
+.smart-card-title {
+  font-size: 1.4em;
+  font-weight: 500;
+  margin-bottom: 10px;
+  margin-left: 7px;
+}
+
+.smart-card-left span,
+.middle-smart-card .smart-card-left span {
+  font-size: 0.9em;
+  font-weight: 400;
+  padding: 7px;
+  border-radius: 10px;
+  background: linear-gradient(to right, #2453d4 0 50%, transparent 50% 100%);
+  background-size: 200% 100%;
+  background-position: 100% 100%;
+  transition: color 0.4s, background-position 0.4s;
+}
+
+.middle-smart-card .smart-card-left span {
+  background: linear-gradient(to right, white 0 50%, transparent 50% 100%);
+  background-size: 200% 100%;
+  background-position: 100% 100%;
+}
+
+.middle-smart-card:hover .smart-card-left span {
+  background-position: 0 100%;
+  color: black;
+}
+
+.middle-smart-card {
+  width: 500px;
+  height: 165px;
+  background-color: #2453d4;
+  color: white;
+}
+
+.middle-smart-card a {
+  color: white;
+}
+
+.middle-smart-card img {
+  width: 282px;
+}
+
+.separator {
+  padding: 0 80px;
+  margin-bottom: 40px;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.cards {
+  padding: 0 100px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 90vw;
+  margin: auto;
+  gap: 20px;
+}
+
+.card {
+  width: 23%;
+  min-width: 190px;
+  height: 360px;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 0 4px gray;
+  cursor: pointer;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.card > a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  height: 100%;
+  gap: 8px;
+  margin: 0 5%;
+  transition: height 0.5s;
+}
+
+.card > a > i {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.3em;
+  transition: color 0.3s;
+}
+
+.card img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.card .product-title,
+.card .product-price {
+  font-weight: bold;
+  font-size: 0.9em;
+  transition: color 0.3s;
+}
+
+.card .product-price {
+  margin-bottom: 20px;
+}
+
+.card .product-title:hover,
+.card > a > i:hover,
+.rect-card-title:hover,
+.rect-card i:hover {
+  color: #2453d4;
+}
+
+.add-to-cart-strip a {
+  background: linear-gradient(to bottom, transparent 0 50%, #2453d4 50% 100%);
+  background-size: 100% 200%;
+  color: white;
+  padding: 20px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 0 0 10px 10px;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+.card:hover > a {
+  height: 80%;
+}
+
+.card:hover .add-to-cart-strip a {
+  background-position: 100% 100%;
+}
+
+.banner {
+  width: 85vw;
+  height: 40vh;
+  margin: auto;
+  border-radius: 10px;
+  background-color: #f3f6fb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80px;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.banner-left > div {
+  font-weight: bold;
+  font-size: 1.6em;
+}
+
+.banner-right img {
+  width: 700px;
+  transform: rotate(20deg);
+}
+
+.rect-cards {
+  width: 85vw;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 40px;
+}
+
+.rect-card {
+  width: 30%;
+  height: 160px;
+}
+
+.rect-card > a {
+  display: flex;
+  gap: 20px;
+  align-items: start;
+  border: 1px solid rgba(128, 128, 128, 0.4);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 15px;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  color: black;
+}
+
+.rect-card img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.rect-card-title-price {
+  font-weight: bold;
+  line-height: 22px;
+  font-size: 0.9em;
+}
+
+.rect-card-title {
+  transition: color 0.3s;
+}
+
+.rect-card-price {
+  margin-top: 10px;
+}
+
+.rect-card i {
+  transition: color 0.3s;
+}
+
+#cart {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  font-size: 35px;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, transparent 0 50%, #2453d4 50% 100%);
+  background-size: 100% 200%;
+  transition: background-position 0.4s;
+}
+
+.rect-card:hover #cart {
+  background-position: 0 100%;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  height: 30vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer > span {
+  font-size: 2.1rem;
+  font-weight: bold;
+  padding-left: 40px;
+}
+
+footer .right {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-end;
+  padding-right: 35px;
+}
+
+footer .legals {
+  display: flex;
+  gap: 12px;
+  font-size: 0.8em;
+  color: rgb(172, 167, 167);
+}
+
+footer .socials {
+  display: flex;
+  gap: 10px;
+  font-size: 1.4em;
+}
+
+.copyright {
+  font-size: 0.8em;
 }
