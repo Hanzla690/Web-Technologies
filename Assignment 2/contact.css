@@ -54,6 +54,11 @@ form.contact-form button {
   color: white;
   padding: 10px;
   font-size: 1.2em;
+  transition: background-color 0.3s;
+}
+
+form.contact-form button:hover{
+  background-color: #1f44ac;
 }
 
 .error {

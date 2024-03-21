@@ -14,9 +14,9 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="contact.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/Lab Task 1/styles.css" />
+    <link rel="stylesheet" href="/Assignment 2/contact.css" />
+    <link rel="stylesheet" href="stories.css" />
   </head>
   <body>
     <header id="header">
@@ -55,40 +55,45 @@
         <li><a href="/Lab Task 2/stories.html">API Stories</a></li>
       </ul>
     </nav>
-    <main class="contact">
-      <div class="contact-left">Questions? We got the answers for you!</div>
-      <div class="contact-right">
-        <form class="contact-form" action="">
-          <span>Contact Us</span>
-          <label for="Name">Name</label>
-          <input type="text" name="Name" id="Name" />
-          <label for="Email">Email</label>
-          <input type="text" name="Email" id="Email" />
-          <label for="Message">Message</label>
-          <textarea name="Message" id="Message" cols="20" rows="5"></textarea>
-          <button type="submit" id="Submit">Send Message</button>
-        </form>
-      </div>
-    </main>
-    <footer>
-      <span>Tech Zone: Where Innovation Meets Convenience</span>
-      <div class="right">
-        <div class="legals">
-          <span>Privacy Policy</span>
-          <span>Cooperation</span>
-          <span>Sponsorship</span>
-          <span>Contact Us</span>
+
+    <div class="container mt-5">
+      <h2 class="mb-4">Story CRUD Operations</h2>
+
+      <!-- Create Form -->
+      <form id="createForm" class="contact-form">
+        <div class="form-group">
+          <label for="createTitle">Title:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="createTitle"
+            required
+            placeholder="new story"
+          />
         </div>
-        <div class="socials">
-          <span><i class="bx bxl-instagram"></i></span>
-          <span><i class="bx bxl-facebook"></i></span>
-          <span><i class="bx bxl-twitter"></i></span>
+        <div class="form-group">
+          <label for="createContent">Content:</label>
+          <textarea
+            class="form-control"
+            id="createContent"
+            rows="3"
+            required
+            placeholder="New Story Content"
+          ></textarea>
         </div>
-        <div class="copyright">
-          Copyright &copy; 2024 TechZone All Rights Reserved
-        </div>
-      </div>
-    </footer>
-    <script src="script.js"></script>
+        <button id="createBtn" type="submit">Create</button>
+        <button id="clearBtn" type="submit" style="display: none">Clear</button>
+      </form>
+
+      <hr />
+
+      <!-- Display Stories -->
+      <div id="storiesList"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./CRUD.js"></script>
   </body>
 </html>
