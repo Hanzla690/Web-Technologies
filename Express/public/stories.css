@@ -1,0 +1,74 @@
+form.contact-form {
+  align-items: start;
+}
+
+form.contact-form label {
+  font-weight: bold;
+  font-size: 1em;
+}
+
+form.contact-form button {
+  font-size: 1em;
+  border: none;
+  transition: background-color 0.3s
+}
+
+.form-group {
+  width: 100%;
+}
+
+#storiesList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.story {
+  background-color: #f3f6fb;
+  padding: 15px;
+  border-radius: 10px;
+  width: 40%;
+  height: 160px;
+  margin-right: 3%;
+}
+
+.story h3 {
+  font-size: 1.5em;
+}
+
+.story-content {
+  font-size: 0.9em;
+  height: 48px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.story-btns{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.edit-btn {
+    background-color: #2453d4;
+    border-radius: 5px;
+    color: white;
+    padding: 3px 15px;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.edit-btn:hover, form.contact-form button:hover{
+    background-color: #1f44ac;
+}
+
+@media screen and (max-width: 768px){
+    #storiesList{
+        flex-direction: column;
+    }
+
+    .story{
+        width: 100%;
+    }
+}

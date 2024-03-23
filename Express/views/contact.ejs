@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech Zone</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="contact.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <%- include('./components/header') %>
+    <%- include('./components/navbar') %>
+    <main class="contact">
+      <div class="contact-left">Questions? We got the answers for you!</div>
+      <div class="contact-right">
+        <form class="contact-form" action="">
+          <span>Contact Us</span>
+          <label for="Name">Name</label>
+          <input type="text" name="Name" id="Name" />
+          <label for="Email">Email</label>
+          <input type="text" name="Email" id="Email" />
+          <label for="Message">Message</label>
+          <textarea name="Message" id="Message" cols="20" rows="5"></textarea>
+          <button type="submit" id="Submit">Send Message</button>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <span>Tech Zone: Where Innovation Meets Convenience</span>
+      <div class="right">
+        <div class="legals">
+          <span>Privacy Policy</span>
+          <span>Cooperation</span>
+          <span>Sponsorship</span>
+          <span>Contact Us</span>
+        </div>
+        <div class="socials">
+          <span><i class="bx bxl-instagram"></i></span>
+          <span><i class="bx bxl-facebook"></i></span>
+          <span><i class="bx bxl-twitter"></i></span>
+        </div>
+        <div class="copyright">
+          Copyright &copy; 2024 TechZone All Rights Reserved
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
