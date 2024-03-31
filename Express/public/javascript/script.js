@@ -36,3 +36,19 @@ $("input, textarea").focus((event) => {
   $(event.target).removeClass("error");
   $(event.target).next(".error-text").remove();
 });
+
+//Increase Product Quantity
+$("#quantity-up").click(() => {
+  let quantity = $("#product-quantity").val();
+  quantity = parseInt(quantity) + 1;
+  $("#product-quantity").val(quantity);
+});
+
+//Decrease Product Quantity
+$("#quantity-down").click(() => {
+  let quantity = $("#product-quantity").val();
+  if (parseInt(quantity) > 1) {
+    quantity = parseInt(quantity) - 1;
+    $("#product-quantity").val(quantity);
+  }
+});
