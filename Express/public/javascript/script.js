@@ -1,3 +1,10 @@
+$(document).ready(() => {
+  var container = $("#info-container");
+
+  var child = $("#specifications");
+  container.height(child.height() + 60);
+});
+
 // Display Nav on Mobile
 let hamburger = document.getElementById("header-menu");
 let header = document.getElementById("header");
@@ -51,4 +58,46 @@ $("#quantity-down").click(() => {
     quantity = parseInt(quantity) - 1;
     $("#product-quantity").val(quantity);
   }
+});
+
+//Set specifications container height dynamically
+function setContainerHeight(childID) {
+  var container = $("#info-container");
+
+  var child = $(childID);
+  container.height(child.height() + 60);
+}
+
+// Specifications BTN Click
+$("#specifications-btn").click(() => {
+  $("#specifications-btn").addClass("button-active").removeClass("button-inactive");
+  $("#reviews-btn").addClass("button-inactive").removeClass("button-active");
+
+  $("#specifications").css({
+      display: "flex",
+      "z-index": 100,
+  });
+
+  $("#reviews").css({
+      display: "none",
+      "z-index": 0,
+  });
+  setContainerHeight("#specifications");
+});
+
+// Reviews BTN Click
+$("#reviews-btn").click(() => {
+  $("#reviews-btn").addClass("button-active").removeClass("button-inactive");
+  $("#specifications-btn").addClass("button-inactive").removeClass("button-active");
+
+  $("#reviews").css({
+      display: "flex",
+      "z-index": 100,
+  });
+
+  $("#specifications").css({
+      display: "none",
+      "z-index": 0,
+  });
+  setContainerHeight("#reviews");
 });
