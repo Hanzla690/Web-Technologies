@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+}
+
+header {
+  margin: 10px 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+header .left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+header .left .logo-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header .logo-name img {
+  width: 35px;
+}
+
+.logo-name div {
+  font-weight: bold;
+  font-size: 2.5vw;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav ul li {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.1vw;
+}
+
+header .right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+header .right div {
+  font-weight: bold;
+  font-size: 1.2vw;
+}
+
+header .right i {
+  font-size: 2vw;
+}
+
+main {
+  width: 87vw;
+  margin: auto;
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+main .left {
+  width: 75%;
+}
+
+main .left .title {
+  font-weight: bold;
+  font-size: 2vw;
+}
+
+main .section-1 {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid black;
+}
+main .left .section-1 .left {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+main .section-1 .right {
+  width: 40%;
+}
+
+.small-article {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-weight: bold;
+  padding: 20px 0;
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+  color: rgb(42, 42, 42);
+}
+
+.small-heading {
+  color: rgb(42, 42, 42);
+  font-weight: bold;
+  font-size: 1vw;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ebebeb;
+}
+
+main .section-1 .right img {
+  width: 100%;
+  padding-bottom: 27px;
+  border-bottom: 1px solid #ebebeb;
+}
+
+main .section-1 .right .small-heading {
+  margin-top: 10px;
+  border: none;
+}
+
+main .right {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+main .right .nbc-news-now {
+  display: flex;
+  gap: 10px;
+  font-weight: bold;
+}
+
+.nbc-news-now img {
+  width: 30px;
+}
+
+.nbc-news-now div {
+  font-size: 1.4vw;
+}
+
+.black-box {
+  background-color: black;
+  width: 240px;
+  height: 140px;
+}
+
+.live-container {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.4vw;
+}
+
+.live {
+  color: red;
+  font-style: italic;
+}
+
+.blue-bar {
+  background-color: #3061ff;
+  width: 100px;
+  height: 10px;
+}
+
+.latest-news {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.5vw;
+  color: rgb(42, 42, 42);
+}
+
+.side-tag {
+  border-top: 1px dashed #999999;
+  padding-top: 15px;
+}
+
+.side-tag .first-row{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.blue-dot{
+    background-color: #3061ff;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.first-row .time{
+    font-size: 0.8vw;
+}
+
+.side-tag .content{
+    margin-left: 20px;
+    font-weight: bold;
+}
