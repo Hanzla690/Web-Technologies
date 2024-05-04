@@ -15,7 +15,7 @@ server.set("view engine", "ejs")
 
 
 server.get("/", (req, res)=>{
-    res.render("index")
+    res.send("Home Page")
 })
 
 server.listen("4000", ()=>{
