@@ -1,25 +1,29 @@
 const express = require("express");
 
-let server = express();
+const productsRoute = require("./routes/products");
 
-server.listen("4000");
+let app = express();
 
-server.use(express.static("public"));
+app.listen("4000");
 
-server.set("view engine", "ejs");
+app.use("/products", productsRoute);
 
-server.get("/", (req, res) => {
+app.use(express.static("public"));
+
+app.set("view engine", "ejs");
+
+app.get("/", (req, res) => {
   res.render("index");
 });
 
-server.get("/contact-us", (req, res) => {
+app.get("/contact-us", (req, res) => {
   res.render("contact");
 });
 
-server.get("/stories", (req, res) => {
+app.get("/stories", (req, res) => {
   res.render("stories");
 });
 
-server.get("/products/:id", (req, res) => {
-    res.render("product-details")
+app.get("/wishlist", (req, res) => {
+  res.render("wishlist");
 });
