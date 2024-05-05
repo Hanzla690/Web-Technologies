@@ -27,3 +27,7 @@ app.get("/stories", (req, res) => {
 app.get("/wishlist", (req, res) => {
   res.render("wishlist");
 });
+
+app.get("/cart", (req, res) => {
+  res.render("cart");
+});

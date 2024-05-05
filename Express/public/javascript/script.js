@@ -60,6 +60,26 @@ $("#quantity-down").click(() => {
   }
 });
 
+
+// Increase Product Quantity
+$(".quantity-up").click(function() {
+  var $input = $(this).prev(".product-quantity");
+  var quantity = parseInt($input.val());
+  quantity = isNaN(quantity) ? 0 : quantity;
+  $input.val(quantity + 1);
+});
+
+// Decrease Product Quantity
+$(".quantity-down").click(function() {
+  var $input = $(this).next(".product-quantity");
+  var quantity = parseInt($input.val());
+  quantity = isNaN(quantity) ? 0 : quantity;
+  if (quantity > 1) {
+    $input.val(quantity - 1);
+  }
+});
+
+
 //Set specifications container height dynamically
 function setContainerHeight(childID) {
   var container = $("#info-container");
