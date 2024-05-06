@@ -50,16 +50,17 @@
       </div>
     </div>
     <div class="result-sort-row">
-        <div class="results">Showing 1-20 of 25 results</div>
-        <div class="sort">Sort</div>
+      <div class="results">Showing 1-20 of 25 results</div>
+      <div class="sort">Sort</div>
     </div>
     <div class="cards">
+      <% for (let product of products){ %>
       <div class="card">
-        <a href="#">
+        <a href="products/<%=product._id %>">
           <i class="bx bx-heart"></i>
-          <img src="assets/card-image.png" alt="" />
-          <div class="product-title">Apple Airpods Pro</div>
-          <div class="product-price">$300</div>
+          <img src="<%= product.image %>" alt="" />
+          <div class="product-title"><%=product.title %></div>
+          <div class="product-price">$<%=product.price %></div>
         </a>
         <div class="add-to-cart-strip">
           <a href="#">
@@ -68,116 +69,7 @@
           </a>
         </div>
       </div>
-      <div class="card">
-        <a href="#">
-          <i class="bx bx-heart"></i>
-          <img src="assets/card-image-6.png" alt="" />
-          <div class="product-title">
-            Lorem ipsum dolor sit amet consectetur.
-          </div>
-          <div class="product-price">$850</div>
-        </a>
-        <div class="add-to-cart-strip">
-          <a href="#">
-            <div class="div">Add to Cart</div>
-            <i class="bx bx-cart cart-icon"></i>
-          </a>
-        </div>
-      </div>
-      <div class="card">
-        <a href="#">
-          <i class="bx bx-heart"></i>
-          <img src="assets/card-image-7.png" alt="" />
-          <div class="product-title">
-            Lorem ipsum dolor sit amet consectetur adipisicing.
-          </div>
-          <div class="product-price">$920</div>
-        </a>
-        <div class="add-to-cart-strip">
-          <a href="#">
-            <div class="div">Add to Cart</div>
-            <i class="bx bx-cart cart-icon"></i>
-          </a>
-        </div>
-      </div>
-      <div class="card">
-        <a href="#">
-          <i class="bx bx-heart"></i>
-          <img src="assets/card-image-2.jpg" alt="" />
-          <div class="product-title">
-            Optical Mouse Pro XS-85477PGT Carbon Black
-          </div>
-          <div class="product-price">$350</div>
-        </a>
-        <div class="add-to-cart-strip">
-          <a href="#">
-            <div class="div">Add to Cart</div>
-            <i class="bx bx-cart cart-icon"></i>
-          </a>
-        </div>
-      </div>
-      <div class="card">
-        <a href="#">
-          <i class="bx bx-heart"></i>
-          <img src="assets/card-image-3.jpg" alt="" />
-          <div class="product-title">
-            Led 4K Smart TV Vantablack Expo GSM-8547366J
-          </div>
-          <div class="product-price">$900</div>
-        </a>
-        <div class="add-to-cart-strip">
-          <a href="#">
-            <div class="div">Add to Cart</div>
-            <i class="bx bx-cart cart-icon"></i>
-          </a>
-        </div>
-      </div>
-      <div class="card">
-        <a href="#">
-          <i class="bx bx-heart"></i>
-          <img src="assets/card-image-4.jpg" alt="" />
-          <div class="product-title">
-            BX-2357 Closed-Back Wireless Headphones
-          </div>
-          <div class="product-price">$700</div>
-        </a>
-        <div class="add-to-cart-strip">
-          <a href="#">
-            <div class="div">Add to Cart</div>
-            <i class="bx bx-cart cart-icon"></i>
-          </a>
-        </div>
-      </div>
-      <div class="card">
-        <a href="#">
-          <i class="bx bx-heart"></i>
-          <img src="assets/card-image-5.jpg" alt="" />
-          <div class="product-title">
-            PC Superior Air Z Silver Grey QOW-5859
-          </div>
-          <div class="product-price">$3250</div>
-        </a>
-        <div class="add-to-cart-strip">
-          <a href="#">
-            <div class="div">Add to Cart</div>
-            <i class="bx bx-cart cart-icon"></i>
-          </a>
-        </div>
-      </div>
-      <div class="card">
-        <a href="#">
-          <i class="bx bx-heart"></i>
-          <img src="assets/card-image-8.png" alt="" />
-          <div class="product-title">Lorem ipsum dolor sit amet.</div>
-          <div class="product-price">$1230</div>
-        </a>
-        <div class="add-to-cart-strip">
-          <a href="#">
-            <div class="div">Add to Cart</div>
-            <i class="bx bx-cart cart-icon"></i>
-          </a>
-        </div>
-      </div>
+      <% } %>
     </div>
     <%- include('./components/footer') %>
   </body>

@@ -20,18 +20,11 @@
   <body>
     <%- include('./components/header') %> <%- include('./components/navbar') %>
     <main class="product-container">
-      <img src="/assets/card-image-3.jpg" alt="" />
+      <img src="<%= product.image %>" alt="" />
       <div class="right">
-        <h1>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas,
-          quibusdam.
-        </h1>
-        <span class="product-price">$1500</span>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-          exercitationem cupiditate incidunt ratione magni impedit libero iusto
-          tempora quos aperiam!
-        </p>
+        <h1><%= product.title %></h1>
+        <span class="product-price">$<%= product.price %></span>
+        <p><%= product.description %></p>
         <div class="product-rating">
           <i class="bx bx-star"></i>
           <i class="bx bx-star"></i>
@@ -62,12 +55,13 @@
         <div class="mini-details">
           <div class="category">
             <span class="tag-title">Category:</span>
-            <span class="tag">Gadgets</span>
+            <span class="tag"><%= product.category %></span>
           </div>
           <div class="tags">
             <span class="tag-title">Tags:</span>
-            <span class="tag">USB,</span>
-            <span class="tag">Wireless</span>
+            <% for (let tag of product.tags){ %>
+            <span class="tag"><%= tag %></span>
+            <% } %>
           </div>
         </div>
       </div>
@@ -80,30 +74,14 @@
         <span id="reviews-btn" class="info">Reviews</span>
       </div>
       <div class="specifications info-details" id="specifications">
+        <% for (let key in product.specifications[0]){ %>
         <div class="specification-item">
-          <div class="specification-title">Weight</div>
-          <div class="specification-value">1kg</div>
+          <div class="specification-title"><%= key %></div>
+          <div class="specification-value">
+            <%= product.specifications[0][key] %>
+          </div>
         </div>
-        <div class="specification-item">
-          <div class="specification-title">Brand</div>
-          <div class="specification-value">TCL</div>
-        </div>
-        <div class="specification-item">
-          <div class="specification-title">Item Width</div>
-          <div class="specification-value">4ft</div>
-        </div>
-        <div class="specification-item">
-          <div class="specification-title">Item Height</div>
-          <div class="specification-value">3ft</div>
-        </div>
-        <div class="specification-item">
-          <div class="specification-title">Weight</div>
-          <div class="specification-value">1kg</div>
-        </div>
-        <div class="specification-item">
-          <div class="specification-title">Brand</div>
-          <div class="specification-value">TCL</div>
-        </div>
+        <% } %>
       </div>
       <div class="reviews info-details" id="reviews">
         <div class="left">
