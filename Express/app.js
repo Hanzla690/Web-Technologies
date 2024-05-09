@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cloudinary = require("cloudinary").v2;
+const cookieParser = require("cookie-parser");
 
 const Product = require("./models/product");
 
@@ -15,8 +16,7 @@ cloudinary.config({
   api_secret: "sOuHuXYGVEuCY8AYpEWTcnLaA0g",
 });
 
-app.listen("4000");
-
+app.use(cookieParser());
 app.use("/products", productsRoute);
 
 app.use(express.static("public"));
@@ -40,8 +40,11 @@ app.get("/wishlist", (req, res) => {
   res.render("wishlist");
 });
 
-app.get("/cart", (req, res) => {
-  res.render("cart");
+app.get("/cart", async (req, res) => {
+  let cart = req.cookies.cart;
+  if (!cart) cart = [];
+  let products = await Product.find({ _id: { $in: cart } });
+  res.render("cart", { products });
 });
 
 app.get("/image", (req, res) => {
@@ -55,3 +58,5 @@ app.get("/image", (req, res) => {
     });
   res.redirect("/");
 });
+
+app.listen("4000");

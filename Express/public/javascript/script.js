@@ -60,9 +60,8 @@ $("#quantity-down").click(() => {
   }
 });
 
-
 // Increase Product Quantity
-$(".quantity-up").click(function() {
+$(".quantity-up").click(function () {
   var $input = $(this).prev(".product-quantity");
   var quantity = parseInt($input.val());
   quantity = isNaN(quantity) ? 0 : quantity;
@@ -70,7 +69,7 @@ $(".quantity-up").click(function() {
 });
 
 // Decrease Product Quantity
-$(".quantity-down").click(function() {
+$(".quantity-down").click(function () {
   var $input = $(this).next(".product-quantity");
   var quantity = parseInt($input.val());
   quantity = isNaN(quantity) ? 0 : quantity;
@@ -78,7 +77,6 @@ $(".quantity-down").click(function() {
     $input.val(quantity - 1);
   }
 });
-
 
 //Set specifications container height dynamically
 function setContainerHeight(childID) {
@@ -90,17 +88,19 @@ function setContainerHeight(childID) {
 
 // Specifications BTN Click
 $("#specifications-btn").click(() => {
-  $("#specifications-btn").addClass("button-active").removeClass("button-inactive");
+  $("#specifications-btn")
+    .addClass("button-active")
+    .removeClass("button-inactive");
   $("#reviews-btn").addClass("button-inactive").removeClass("button-active");
 
   $("#specifications").css({
-      display: "flex",
-      "z-index": 100,
+    display: "flex",
+    "z-index": 100,
   });
 
   $("#reviews").css({
-      display: "none",
-      "z-index": 0,
+    display: "none",
+    "z-index": 0,
   });
   setContainerHeight("#specifications");
 });
@@ -108,16 +108,35 @@ $("#specifications-btn").click(() => {
 // Reviews BTN Click
 $("#reviews-btn").click(() => {
   $("#reviews-btn").addClass("button-active").removeClass("button-inactive");
-  $("#specifications-btn").addClass("button-inactive").removeClass("button-active");
+  $("#specifications-btn")
+    .addClass("button-inactive")
+    .removeClass("button-active");
 
   $("#reviews").css({
-      display: "flex",
-      "z-index": 100,
+    display: "flex",
+    "z-index": 100,
   });
 
   $("#specifications").css({
-      display: "none",
-      "z-index": 0,
+    display: "none",
+    "z-index": 0,
   });
   setContainerHeight("#reviews");
+});
+
+$(".add-to-cart-btn").click(function (event) {
+  event.preventDefault();
+
+  const productID = $(this).data("product-id");
+  $.ajax({
+    method: "get",
+    url: `/products/${productID}/add-to-cart`,
+    success: (result) => {
+      console.log(result);
+    },
+  });
+  $(".success-msg").addClass("active")
+  setTimeout(()=>{
+    $(".success-msg").removeClass("active")
+  }, 2500)
 });

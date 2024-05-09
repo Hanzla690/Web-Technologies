@@ -506,6 +506,25 @@ nav ul li a{
   background-position: 0 100%;
 }
 
+.success-msg{
+  background-color: #2453d4;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+  border-radius: 10px;
+  position: fixed;
+  bottom: 20px;
+  left: 40%;
+  z-index: 100;
+  padding: 10px 20px;
+  display: none;
+}
+
+.success-msg.active{
+  display: block;
+}
+
 footer {
   background-color: black;
   color: white;
