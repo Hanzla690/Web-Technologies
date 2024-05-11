@@ -44,33 +44,35 @@ $("input, textarea").focus((event) => {
   $(event.target).next(".error-text").remove();
 });
 
-//Increase Product Quantity
-$("#quantity-up").click(() => {
-  let quantity = $("#product-quantity").val();
-  quantity = parseInt(quantity) + 1;
-  $("#product-quantity").val(quantity);
-});
+// //Increase Product Quantity
+// $("#quantity-up").click(() => {
+//   let quantity = $("#product-quantity").val();
+//   quantity = parseInt(quantity) + 1;
+//   $("#product-quantity").val(quantity);
+// });
 
-//Decrease Product Quantity
-$("#quantity-down").click(() => {
-  let quantity = $("#product-quantity").val();
-  if (parseInt(quantity) > 1) {
-    quantity = parseInt(quantity) - 1;
-    $("#product-quantity").val(quantity);
-  }
-});
+// //Decrease Product Quantity
+// $("#quantity-down").click(() => {
+//   let quantity = $("#product-quantity").val();
+//   if (parseInt(quantity) > 1) {
+//     quantity = parseInt(quantity) - 1;
+//     $("#product-quantity").val(quantity);
+//   }
+// });
 
 // Increase Product Quantity
 $(".quantity-up").click(function () {
-  var $input = $(this).prev(".product-quantity");
-  var quantity = parseInt($input.val());
+  console.log("Up Arrow Clicked");
+  var input = $(this).parent().prev("input.product-quantity");
+  var quantity = parseInt(input.val());
   quantity = isNaN(quantity) ? 0 : quantity;
-  $input.val(quantity + 1);
+  input.val(quantity + 1);
 });
 
 // Decrease Product Quantity
 $(".quantity-down").click(function () {
-  var $input = $(this).next(".product-quantity");
+  console.log("Down Arrow Clicked");
+  var $input = $(this).parent().prev("input.product-quantity");
   var quantity = parseInt($input.val());
   quantity = isNaN(quantity) ? 0 : quantity;
   if (quantity > 1) {
@@ -135,8 +137,43 @@ $(".add-to-cart-btn").click(function (event) {
       console.log(result);
     },
   });
-  $(".success-msg").addClass("active")
-  setTimeout(()=>{
-    $(".success-msg").removeClass("active")
-  }, 2500)
+  $(".success-msg").addClass("active");
+  setTimeout(() => {
+    $(".success-msg").removeClass("active");
+  }, 2500);
+});
+
+// $(".remove-item-btn").click(function () {
+//   let id = $(this).data("product-id");
+//   console.log(id);
+//   $.ajax({
+//     method: "delete",
+//     url: `/cart/${id}`,
+//     success: () => {
+//       window.location.href = "/cart";
+//     },
+//   });
+// });
+
+$(".update-cart-btn").click(() => {
+  let products = [];
+  $(".items .item").each(function () {
+    let id = $(this).find(".product-title").data("product-id");
+    let quantity = $(this).find("input.product-quantity").val();
+
+    products.push({
+      id: id,
+      quantity: quantity,
+    });
+  });
+  $.ajax({
+    method: "post",
+    url: "/cart",
+    data: {
+      products: products,
+    },
+    success: () => {
+      window.location.href = "/cart";
+    },
+  });
 });

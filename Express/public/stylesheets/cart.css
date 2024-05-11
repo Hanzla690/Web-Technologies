@@ -40,7 +40,7 @@
   align-items: center;
 }
 
-.product-quantity-container #product-quantity {
+.product-quantity-container .product-quantity {
   border: 1px solid rgba(124, 124, 124, 0.4);
   border-radius: 10px;
   width: 50px;
@@ -61,6 +61,15 @@
 
 .quantity-buttons i:hover {
   color: #2453d4;
+}
+
+.update-cart{
+  display: flex;
+  justify-content: end;
+}
+
+.update-cart-btn{
+  width: 170px !important;
 }
 
 .title.total {

@@ -25,12 +25,27 @@ router.get("/:id/add-to-cart", async (req, res) => {
   let cart = req.cookies.cart;
   if (!cart) cart = [];
   let id = req.params.id;
+  let quantity = 1;
+  let found = false;
   try {
     let product = await Product.findById(id);
     if (!product) {
       res.redirect("/");
     }
-    cart.push(id);
+
+    cart.forEach((item) => {
+      if (item.id == product.id) {
+        item.quantity += 1;
+        found = true;
+      }
+    });
+
+    if (!found) {
+      cart.push({
+        id: id,
+        quantity: quantity,
+      });
+    }
     res.cookie("cart", cart);
     res.send("Added Succesfully");
   } catch {

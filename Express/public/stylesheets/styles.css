@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 * {
   margin: 0;
@@ -24,7 +24,7 @@ header .logo {
   font-size: 1.5em;
 }
 
-header .logo a{
+header .logo a {
   text-decoration: none;
   color: black;
 }
@@ -89,7 +89,7 @@ header .logo a{
   font-size: 2em;
 }
 
-.header-right > a{
+.header-right > a {
   text-decoration: none;
   color: black;
 }
@@ -106,6 +106,24 @@ header .logo a{
   color: white;
   cursor: pointer;
   background-position: 100% 100%;
+}
+
+.header-right .cart-icon {
+  position: relative;
+}
+
+.header-right .cart-count {
+  position: absolute;
+  color: white;
+  background-color: #2453d4;
+  right: 0px;
+  width: 10px;
+  font-size: 17px;
+  border-radius: 10px;
+  padding: 0px 12px;
+  display: flex;
+  justify-content: center;
+  top: -5px;
 }
 
 #header-menu {
@@ -165,7 +183,7 @@ nav ul li:hover {
   background-color: #1e39df;
 }
 
-nav ul li a{
+nav ul li a {
   text-decoration: none;
   color: white;
   height: 100%;
@@ -506,7 +524,7 @@ nav ul li a{
   background-position: 0 100%;
 }
 
-.success-msg{
+.success-msg {
   background-color: #2453d4;
   color: white;
   font-weight: bold;
@@ -521,7 +539,7 @@ nav ul li a{
   display: none;
 }
 
-.success-msg.active{
+.success-msg.active {
   display: block;
 }
 
@@ -884,19 +902,18 @@ footer .socials {
 }
 
 @media screen and (max-width: 600px) {
-
-  .separator{
+  .separator {
     padding: 0 20px;
   }
 
-  .smart-cards{
+  .smart-cards {
     padding: 0 30px;
   }
   .smart-card {
     font-size: 14px;
   }
 
-  .cards{
+  .cards {
     width: 100vw;
   }
 
@@ -923,16 +940,16 @@ footer .socials {
     margin-bottom: 15px;
   }
 
-  .rect-card{
+  .rect-card {
     font-size: 14px;
   }
 
-  .rect-card img{
+  .rect-card img {
     min-width: 80px;
     margin: auto;
   }
 
-  #cart{
+  #cart {
     font-size: 18px;
   }
 
@@ -941,13 +958,13 @@ footer .socials {
     height: auto;
   }
 
-  footer > span{
+  footer > span {
     width: 90%;
     margin: auto;
     padding: 10px 0;
   }
 
-  footer .right{
+  footer .right {
     width: 90%;
     margin: auto;
     padding: 0;

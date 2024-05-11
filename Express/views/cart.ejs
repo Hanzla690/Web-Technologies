@@ -33,9 +33,13 @@
       <% products.forEach(product => { %>
       <div class="item">
         <div class="left">
-          <i class="bx bx-x"></i>
+          <a href="/cart/remove/<%= product._id %>">
+            <i class="bx bx-x"></i>
+          </a>
           <img src="<%= product.image %>" alt="" />
-          <div><%= product.title %></div>
+          <div class="product-title" data-product-id="<%= product._id %>">
+            <%= product.title %>
+          </div>
         </div>
         <div class="right">
           <div class="price">$<%= product.price %></div>
@@ -43,23 +47,28 @@
             <input
               type="text"
               inputmode="numeric"
-              value="1"
-              id="product-quantity"
+              value="<%= product.quantity %>"
+              class="product-quantity"
             />
             <div class="quantity-buttons">
-              <i id="quantity-up" class="bx bx-chevron-up"></i>
-              <i id="quantity-down" class="bx bx-chevron-down"></i>
+              <i class="bx bx-chevron-up quantity-up"></i>
+              <i class="bx bx-chevron-down quantity-down"></i>
             </div>
           </div>
-          <div class="price">$<%= product.price %></div>
+          <div class="price">$<%= product.price * product.quantity %></div>
         </div>
       </div>
       <% }) %>
     </div>
+    <div class="checkout-btn-container update-cart">
+      <div class="checkout-btn update-cart-btn">
+        <div>Update Cart</div>
+      </div>
+    </div>
     <div class="title total">Cart Total</div>
     <div class="total-container">
       <div>Total</div>
-      <div class="total-price">$2400</div>
+      <div class="total-price">$<%= total %></div>
     </div>
     <div class="checkout-btn-container">
       <div class="checkout-btn">

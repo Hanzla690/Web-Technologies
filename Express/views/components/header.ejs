@@ -15,7 +15,10 @@
     <a href="/wishlist">
       <i class="bx bx-heart"></i>
     </a>
-    <a href="/cart">
+    <a href="/cart" class="cart-icon">
+      <% if (cart.length != 0) { %>
+      <div class="cart-count"><%= cart.length %></div>
+      <% } %>
       <i class="bx bx-cart"></i>
     </a>
     <i id="header-menu" class="bx bx-menu"></i>

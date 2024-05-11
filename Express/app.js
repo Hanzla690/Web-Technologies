@@ -6,6 +6,9 @@ const cookieParser = require("cookie-parser");
 const Product = require("./models/product");
 
 const productsRoute = require("./routes/products");
+const cartRoute = require("./routes/cart");
+
+const { checkCartCount } = require("./middlewares/cart-count");
 
 let app = express();
 mongoose.connect("mongodb://localhost:27017/TechZone");
@@ -16,12 +19,15 @@ cloudinary.config({
   api_secret: "sOuHuXYGVEuCY8AYpEWTcnLaA0g",
 });
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use("/products", productsRoute);
-
+app.set("view engine", "ejs");
 app.use(express.static("public"));
 
-app.set("view engine", "ejs");
+app.use(checkCartCount);
+app.use("/products", productsRoute);
+app.use("/cart", cartRoute);
 
 app.get("/", async (req, res) => {
   let products = await Product.find();
@@ -38,13 +44,6 @@ app.get("/stories", (req, res) => {
 
 app.get("/wishlist", (req, res) => {
   res.render("wishlist");
-});
-
-app.get("/cart", async (req, res) => {
-  let cart = req.cookies.cart;
-  if (!cart) cart = [];
-  let products = await Product.find({ _id: { $in: cart } });
-  res.render("cart", { products });
 });
 
 app.get("/image", (req, res) => {
