@@ -17,14 +17,9 @@ router.get("/", async (req, res) => {
   res.send(products);
 });
 
-router.post("/", upload.single("image"), (req, res) => {
+router.post("/", upload.single("image"), async (req, res) => {
   const tempFilePath = `temp_${Date.now()}.png`;
-  fs.writeFile(tempFilePath, req.file.buffer, (err) => {
-    if (err) {
-      console.error("Error saving file to disk:", err);
-      return res.status(500).send("Error saving file to disk");
-    }
-  });
+  await fs.promises.writeFile(tempFilePath, req.file.buffer);
 
   let data = {
     title: req.body.title,
@@ -48,6 +43,9 @@ router.post("/", upload.single("image"), (req, res) => {
     })
     .catch((error) => {
       console.log(error);
+    })
+    .finally(async () => {
+      await fs.promises.unlink(tempFilePath);
     });
   res.render("api-products");
 });
