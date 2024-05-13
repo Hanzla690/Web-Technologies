@@ -2,11 +2,13 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cloudinary = require("cloudinary").v2;
 const cookieParser = require("cookie-parser");
+const multer = require("multer");
 
 const Product = require("./models/product");
 
 const productsRoute = require("./routes/products");
 const cartRoute = require("./routes/cart");
+const apiRoute = require("./routes/api/products");
 
 const { checkCartCount } = require("./middlewares/cart-count");
 
@@ -19,6 +21,8 @@ cloudinary.config({
   api_secret: "sOuHuXYGVEuCY8AYpEWTcnLaA0g",
 });
 
+const upload = multer();
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
@@ -28,6 +32,7 @@ app.use(express.static("public"));
 app.use(checkCartCount);
 app.use("/products", productsRoute);
 app.use("/cart", cartRoute);
+app.use("/api/products", apiRoute);
 
 app.get("/", async (req, res) => {
   let products = await Product.find();

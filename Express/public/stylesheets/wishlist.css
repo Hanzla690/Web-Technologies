@@ -65,7 +65,7 @@
   font-size: 20px;
 }
 
-.items .item .right .add-to-cart-btn {
+.items .item .right .add-to-cart-btn, .add-to-cart-btn {
   background-color: #2453d4;
   color: white;
   padding: 15px 25px;

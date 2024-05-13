@@ -9,7 +9,7 @@ let productSchema = mongoose.Schema(
     rating: Number,
     category: String,
     tags: [String],
-    specifications: [{}],
+    specifications: {},
   },
   { versionKey: false },
   { timestamps: true }

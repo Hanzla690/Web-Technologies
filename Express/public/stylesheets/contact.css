@@ -40,7 +40,8 @@ form.contact-form label {
 }
 
 form.contact-form input,
-form.contact-form textarea {
+form.contact-form textarea,
+select {
   border-radius: 5px;
   border: 1px solid rgba(126, 126, 126, 0.4);
   outline: none;
@@ -57,7 +58,7 @@ form.contact-form button {
   transition: background-color 0.3s;
 }
 
-form.contact-form button:hover{
+form.contact-form button:hover {
   background-color: #1f44ac;
 }
 
