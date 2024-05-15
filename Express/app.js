@@ -51,16 +51,8 @@ app.get("/wishlist", (req, res) => {
   res.render("wishlist");
 });
 
-app.get("/image", (req, res) => {
-  cloudinary.uploader
-    .upload("./public/assets/card-image.png", {
-      folder: "Assets",
-      use_filename: true,
-    })
-    .then((result) => {
-      console.log(result);
-    });
-  res.redirect("/");
+app.get("/admin", (req, res) => {
+  res.render("api-products");
 });
 
 app.listen("4000");

@@ -1,9 +1,12 @@
+var edit = false;
+var id = "";
+
 $(() => {
   displayProducts();
 
   $(document).on("click", ".delete-btn", deleteProduct);
-  $(document).on("click", ".edit-btn", showModal);
-  $(document).on("click", "#submit", addProduct);
+  $(document).on("click", ".edit-btn", editProduct);
+  $(document).on("click", "#submit", submitForm);
 });
 
 function displayProducts() {
@@ -17,7 +20,7 @@ function displayProducts() {
       data.forEach((product) => {
         items.append(`<div class="item" data-product-id="${product._id}">
                 <div class="left">
-                  <img src="${product.image}" alt="" />
+                  <img src="${product.image.url}" alt="" />
                   <div>${product.title}</div>
                 </div>
                 <div class="right">
@@ -38,6 +41,34 @@ function displayProducts() {
   });
 }
 
+function editProduct() {
+  let ID = $(this).parent().parent().data("product-id");
+  id = ID;
+  $.ajax({
+    method: "get",
+    url: `/api/products/${ID}`,
+    success: function (result) {
+      let specifications = [];
+      $("#title").val(result.title);
+      $("#price").val(result.price);
+      $("#description").val(result.description);
+      $("#category").val(result.category);
+      $("#tags").val(result.tags);
+      for (key in result.specifications) {
+        let string = `${key}:${result.specifications[key]},`;
+        string.replace(/""/g, "");
+        specifications.push(string);
+      }
+      $("#specifications").val(JSON.stringify(specifications));
+      $("label[for='image']").css("display", "none");
+      $("#image").css("display", "none");
+      $("span.heading").text("Edit Product");
+      showModal();
+      edit = true;
+    },
+  });
+}
+
 function deleteProduct() {
   let ID = $(this).parent().parent().data("product-id");
   $.ajax({
@@ -49,7 +80,7 @@ function deleteProduct() {
   });
 }
 
-function addProduct(event) {
+function submitForm(event) {
   event.preventDefault();
   let formData = new FormData();
 
@@ -57,40 +88,79 @@ function addProduct(event) {
   formData.append("price", $("#price").val());
   formData.append("description", $("#description").val());
   formData.append("category", $("#category").val());
-  formData.append("tags", JSON.stringify($("#tags").val().split(" ")));
+  formData.append("tags", JSON.stringify($("#tags").val().split(",")));
 
-  var pairs = $("#specifications").val().split(" ");
+  var pairs = $("#specifications").val().split(",");
   var dataObject = {};
   pairs.forEach(function (pair) {
-    var keyValue = pair.split(",");
+    var keyValue = pair.split(":");
     var key = keyValue[0];
     var value = keyValue[1];
     dataObject[key] = value;
   });
 
   formData.append("specifications", JSON.stringify(dataObject));
-  let fileInput = $("#image")[0];
-  formData.append("image", fileInput.files[0]);
+  if (!edit) {
+    let fileInput = $("#image")[0];
+    formData.append("image", fileInput.files[0]);
+    console.log(formData);
+    $.ajax({
+      method: "post",
+      url: "/api/products",
+      processData: false,
+      contentType: false,
+      data: formData,
+      success: function () {
+        hideModal();
+        setTimeout(() => {
+          displayProducts();
+        }, 5000);
+      },
+    });
+  } else {
+    console.log(formData);
+    $.ajax({
+      method: "put",
+      url: `/api/products/${id}`,
+      processData: false,
+      contentType: false,
+      data: formData,
+      success: function () {
+        hideModal();
+        displayProducts();
+      },
+    });
+  }
+}
 
-  $.ajax({
-    method: "post",
-    url: "/api/products",
-    processData: false,
-    contentType: false,
-    data: formData,
-    success: function () {
-      hideModal();
-      setTimeout(() => {
-        displayProducts()
-      }, 3000);
-    //   location.reload(true);
-    },
-  });
+$(".add-btn").click(() => {
+  edit = false;
+  $("label[for='image']").css("display", "block");
+  $("#image").css("display", "block");
+  $("span.heading").text("Add Product");
+  clearFields();
+  showModal();
+});
+
+$(".gray-background").click(() => {
+  hideModal();
+});
+
+function clearFields() {
+  $("#title").val("");
+  $("#price").val("");
+  $("#description").val("");
+  $("#category").val("");
+  $("#tags").val("");
+  $("#specifications").val("");
+  $("#image").val("");
 }
 
 function showModal() {
-  $(".gray-background").show();
   $(".add-product").show();
+  $(".gray-background")
+    .css("height", $(document).height() + "px")
+    .show();
   $("body").css("overflow", "hidden");
 }
 
@@ -99,11 +169,3 @@ function hideModal() {
   $(".add-product").hide();
   $("body").css("overflow", "");
 }
-
-$(".add-btn").click(() => {
-  showModal();
-});
-
-$(".gray-background").click(() => {
-  hideModal();
-});

@@ -20,7 +20,7 @@
   <body>
     <%- include('./components/header') %> <%- include('./components/navbar') %>
     <main class="product-container">
-      <img src="<%= product.image %>" alt="" />
+      <img src="<%= product.image.url %>" alt="" />
       <div class="right">
         <h1><%= product.title %></h1>
         <span class="product-price">$<%= product.price %></span>
@@ -74,11 +74,11 @@
         <span id="reviews-btn" class="info">Reviews</span>
       </div>
       <div class="specifications info-details" id="specifications">
-        <% for (let key in product.specifications[0]){ %>
+        <% for (let key in product.specifications){ %>
         <div class="specification-item">
           <div class="specification-title"><%= key %></div>
           <div class="specification-value">
-            <%= product.specifications[0][key] %>
+            <%= product.specifications[key] %>
           </div>
         </div>
         <% } %>

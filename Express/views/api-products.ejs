@@ -30,7 +30,7 @@
     <div class="items"></div>
     <div class="add-product">
       <form class="contact-form" action="">
-        <span>Add Product</span>
+        <span class="heading">Add Product</span>
         <label for="title">Title</label>
         <input type="text" name="title" id="title" />
         <label for="price">Price</label>
@@ -51,14 +51,19 @@
           <option value="Screens">Screens</option>
           <option value="Watches">Watches</option>
         </select>
-        <label for="tags">Tags (Separated by Space)</label>
-        <input type="text" name="tags" id="tags" />
-        <label for="specifications">Specifications (Separated by Space)</label>
+        <label for="tags">Tags</label>
+        <input
+          type="text"
+          name="tags"
+          id="tags"
+          placeholder="i.e Audio, Headphones"
+        />
+        <label for="specifications">Specifications</label>
         <input
           type="text"
           name="specifications"
           id="specifications"
-          placeholder="i.e Brand,Apple Weight,50"
+          placeholder="i.e Brand:Apple, Weight:50"
         />
         <label for="image">Image</label>
         <input type="file" name="image" id="image" accept="image/*" />

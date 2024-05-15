@@ -8,18 +8,19 @@ const upload = multer();
 
 const Product = require("../../models/product");
 
-router.get("/display", async (req, res) => {
-  res.render("api-products");
-});
-
 router.get("/", async (req, res) => {
   let products = await Product.find();
   res.send(products);
 });
 
+router.get("/:id", async (req, res) => {
+  let id = req.params.id;
+  let product = await Product.findById(id);
+  res.send(product);
+});
+
 router.post("/", upload.single("image"), async (req, res) => {
-  const tempFilePath = `temp_${Date.now()}.png`;
-  await fs.promises.writeFile(tempFilePath, req.file.buffer);
+  await fs.promises.writeFile(req.file.originalname, req.file.buffer);
 
   let data = {
     title: req.body.title,
@@ -32,12 +33,16 @@ router.post("/", upload.single("image"), async (req, res) => {
   };
 
   cloudinary.uploader
-    .upload(tempFilePath, {
+    .upload(req.file.originalname, {
       folder: "Assets",
       resource_type: "auto",
     })
     .then(async (result) => {
-      data.image = result.secure_url;
+      let image = {
+        publicId: result.public_id,
+        url: result.secure_url,
+      };
+      data.image = image;
       let product = new Product(data);
       await product.save();
     })
@@ -45,14 +50,29 @@ router.post("/", upload.single("image"), async (req, res) => {
       console.log(error);
     })
     .finally(async () => {
-      await fs.promises.unlink(tempFilePath);
+      await fs.promises.unlink(req.file.originalname);
     });
   res.render("api-products");
 });
 
+router.put("/:id", upload.none(), async (req, res) => {
+  let id = req.params.id;
+  let product = await Product.findById(id);
+  product.title = req.body.title;
+  product.price = req.body.price;
+  product.description = req.body.description;
+  product.category = req.body.category;
+  product.tags = JSON.parse(req.body.tags);
+  product.specifications = JSON.parse(req.body.specifications);
+  await product.save();
+  res.send("Product Updated");
+});
+
 router.delete("/:id", async (req, res) => {
   let id = req.params.id;
-  await Product.findByIdAndDelete(id);
+  let product = await Product.findById(id);
+  cloudinary.api.delete_resources([product.image.publicId]);
+  await Product.deleteOne({ _id: id });
   res.render("api-products");
 });
 
