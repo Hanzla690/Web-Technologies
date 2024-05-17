@@ -2,22 +2,23 @@ var edit = false;
 var id = "";
 
 $(() => {
-  displayProducts();
+  displayProducts(1);
 
   $(document).on("click", ".delete-btn", deleteProduct);
   $(document).on("click", ".edit-btn", editProduct);
   $(document).on("click", "#submit", submitForm);
 });
 
-function displayProducts() {
+function displayProducts(pageNumber) {
   $.ajax({
     method: "get",
-    url: "/api/products",
+    url: `/api/products?pageNumber=${pageNumber}`,
     success: (data) => {
       let items = $(".items");
       items.empty();
+      let totalPage = Math.ceil(data.count / data.pageSize);
 
-      data.forEach((product) => {
+      data.products.forEach((product) => {
         items.append(`<div class="item" data-product-id="${product._id}">
                 <div class="left">
                   <img src="${product.image.url}" alt="" />
@@ -34,6 +35,13 @@ function displayProducts() {
                 </div>
               </div>`);
       });
+      let pages = $(".pages");
+      pages.empty();
+      for (let i = 1; i <= totalPage; i++) {
+        pages.append(`
+        <div>${i}</div>
+        `);
+      }
     },
     error: () => {
       console.log("Error fetching products");
@@ -132,6 +140,11 @@ function submitForm(event) {
     });
   }
 }
+
+$(".pages").on("click", "div", function (event) {
+  event.preventDefault();
+  displayProducts($(this).text());
+});
 
 $(".add-btn").click(() => {
   edit = false;

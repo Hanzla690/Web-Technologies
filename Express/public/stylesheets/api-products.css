@@ -29,6 +29,10 @@
   background-color: #1e39df;
 }
 
+.items {
+  margin-bottom: 0;
+}
+
 .items .item .right .add-to-cart-btn {
   min-width: 0;
   padding: 10px 20px;
@@ -90,4 +94,20 @@
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+.pages {
+  width: 80vw;
+  margin: auto;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.pages div {
+  color: white;
+  background-color: #2453d4;
+  padding: 5px 13px;
+  border-radius: 10px;
+  cursor: pointer;
 }

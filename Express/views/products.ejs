@@ -58,7 +58,7 @@
       <div class="card">
         <a href="products/<%=product._id %>">
           <i class="bx bx-heart"></i>
-          <img src="<%= product.image %>" alt="" />
+          <img src="<%= product.image.url %>" alt="" />
           <div class="product-title"><%=product.title %></div>
           <div class="product-price">$<%=product.price %></div>
         </a>
@@ -69,6 +69,11 @@
           </a>
         </div>
       </div>
+      <% } %>
+    </div>
+    <div class="pages">
+      <% for( let i = 1; i <= totalPages; i++ ) { %>
+      <a href="/products?pageNumber=<%= i %>"><%= i %></a>
       <% } %>
     </div>
     <%- include('./components/footer') %>

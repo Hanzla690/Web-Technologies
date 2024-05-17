@@ -26,14 +26,31 @@
   color: gray;
 }
 
-.result-sort-row{
-    width: 73vw;
-    margin: auto;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
+.result-sort-row {
+  width: 73vw;
+  margin: auto;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.result-sort-row .results{
-    color: gray;
+.result-sort-row .results {
+  color: gray;
+}
+
+.pages {
+  width: 80vw;
+  margin: auto;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10vh;
+}
+
+.pages a {
+  text-decoration: none;
+  color: white;
+  background-color: #2453d4;
+  padding: 5px 13px;
+  border-radius: 10px;
 }

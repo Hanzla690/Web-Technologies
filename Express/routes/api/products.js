@@ -9,8 +9,13 @@ const upload = multer();
 const Product = require("../../models/product");
 
 router.get("/", async (req, res) => {
-  let products = await Product.find();
-  res.send(products);
+  let currentPage = req.query.pageNumber;
+  let pageSize = 1;
+  let count = await Product.countDocuments();
+  let products = await Product.find()
+    .limit(pageSize)
+    .skip((currentPage - 1) * pageSize);
+  res.send({ products, count, pageSize });
 });
 
 router.get("/:id", async (req, res) => {
