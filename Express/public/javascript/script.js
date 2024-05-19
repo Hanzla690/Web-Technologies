@@ -143,18 +143,6 @@ $(".add-to-cart-btn").click(function (event) {
   }, 2500);
 });
 
-// $(".remove-item-btn").click(function () {
-//   let id = $(this).data("product-id");
-//   console.log(id);
-//   $.ajax({
-//     method: "delete",
-//     url: `/cart/${id}`,
-//     success: () => {
-//       window.location.href = "/cart";
-//     },
-//   });
-// });
-
 $(".update-cart-btn").click(() => {
   let products = [];
   $(".items .item").each(function () {
@@ -176,4 +164,8 @@ $(".update-cart-btn").click(() => {
       window.location.href = "/cart";
     },
   });
+});
+
+$(".bx-user").click(() => {
+  $(".login-modal").css("display", "flex").show();
 });

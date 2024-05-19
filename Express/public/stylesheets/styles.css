@@ -94,18 +94,61 @@ header .logo a {
   color: black;
 }
 
-.header-right i {
+.header-right a > i,
+.header-right > i {
   padding: 7px;
   border-radius: 10px;
   background: linear-gradient(to top, #2453d4 0 50%, transparent 50% 100%);
   background-size: 100% 200%;
   transition: color 0.4s, background-position 0.4s;
+  position: relative;
 }
 
-.header-right i:hover {
+.header-right a > i:hover,
+.header-right > i:hover {
   color: white;
   cursor: pointer;
   background-position: 100% 100%;
+}
+
+.header-right .login-modal {
+  position: absolute;
+  background-color: #f3f6fb;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  width: 15vw;
+  left: -69px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.login-modal:hover {
+  color: black;
+}
+
+.login-modal .greeting {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.login-modal i {
+  font-size: 73px;
+  border: 2px solid black;
+  border-radius: 50%;
+  padding: 15px;
+}
+
+.login-modal button {
+  background-color: #2453d4;
+  border-radius: 10px;
+  color: white;
+  padding: 5px 15px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  border: none;
 }
 
 .header-right .cart-icon {
