@@ -14,9 +14,11 @@
     <a href="/auth">
       <i class="bx bx-user"></i>
     </a>
+    <% if (user) { %>
     <a href="/wishlist">
       <i class="bx bx-heart"></i>
     </a>
+    <% } %>
     <a href="/cart" class="cart-icon">
       <% if (cart.length != 0) { %>
       <div class="cart-count"><%= cart.length %></div>
