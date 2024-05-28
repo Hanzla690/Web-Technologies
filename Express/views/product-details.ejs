@@ -19,7 +19,7 @@
         <i id="quantity-up" class="bx bx-chevron-up"></i>
         <i id="quantity-down" class="bx bx-chevron-down"></i>
       </div>
-      <a href="/products/<%= product._id %>/add-to-cart">
+      <a class="add-to-cart-btn" data-product-id="<%= product._id %>">
         <div class="add-to-cart">
           <span>Add to cart</span>
           <i class="bx bx-cart cart-icon"></i>
@@ -194,3 +194,5 @@
   </div>
   <div class="clear"></div>
 </section>
+
+<div class="success-msg">Product Added to Cart</div>

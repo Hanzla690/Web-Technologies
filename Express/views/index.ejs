@@ -114,44 +114,18 @@
 
 <div class="separator">Top Rated Products</div>
 <div class="rect-cards">
+  <% for( let i = 0; i < 3; i++ ) { %>
   <div class="rect-card">
-    <a href="#">
-      <img src="assets/card-image-7.png" alt="" />
+    <a href="products/<%=products[i]._id %>">
+      <img src="<%= products[i].image.url %>" alt="" />
       <div class="rect-card-title-price">
-        <div class="rect-card-title">
-          Lorem ipsum dolor sit amet consectetur.
-        </div>
-        <div class="rect-card-price">$500</div>
+        <div class="rect-card-title"><%= products[i].title %></div>
+        <div class="rect-card-price">$<%= products[i].price %></div>
       </div>
       <i class="bx bx-heart"></i>
       <i id="cart" class="bx bx-cart"></i>
     </a>
   </div>
-  <div class="rect-card">
-    <a href="#">
-      <img src="assets/card-image-8.png" alt="" />
-      <div class="rect-card-title-price">
-        <div class="rect-card-title">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </div>
-        <div class="rect-card-price">$670</div>
-      </div>
-      <i class="bx bx-heart"></i>
-      <i id="cart" class="bx bx-cart"></i>
-    </a>
-  </div>
-  <div class="rect-card">
-    <a href="#">
-      <img src="assets/card-image-6.png" alt="" />
-      <div class="rect-card-title-price">
-        <div class="rect-card-title">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </div>
-        <div class="rect-card-price">$1230</div>
-      </div>
-      <i class="bx bx-heart"></i>
-      <i id="cart" class="bx bx-cart"></i>
-    </a>
-  </div>
+  <% } %>
 </div>
 <div class="success-msg">Product Added to Cart</div>

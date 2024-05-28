@@ -53,7 +53,7 @@ router.post("/", (req, res) => {
     let cartItem = products.find((product) => product.id === item.id);
 
     if (cartItem) {
-      item.quantity = cartItem.quantity;
+      item.quantity = Number(cartItem.quantity);
     }
   });
   res.cookie("cart", cart);

@@ -44,7 +44,7 @@
       <div class="product-price">$<%=product.price %></div>
     </a>
     <div class="add-to-cart-strip">
-      <a href="#">
+      <a class="add-to-cart-btn" data-product-id="<%= product._id %>">
         <div class="div">Add to Cart</div>
         <i class="bx bx-cart cart-icon"></i>
       </a>
@@ -57,3 +57,5 @@
   <a href="/products?pageNumber=<%= i %>"><%= i %></a>
   <% } %>
 </div>
+
+<div class="success-msg">Product Added to Cart</div>

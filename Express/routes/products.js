@@ -53,7 +53,7 @@ router.get("/:id/add-to-cart", async (req, res) => {
       });
     }
     res.cookie("cart", cart);
-    res.send("Added Succesfully");
+    res.send("added")
   } catch {
     res.redirect("/");
   }
