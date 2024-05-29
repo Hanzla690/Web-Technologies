@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="/stylesheets/wishlist.css" />
+<link rel="stylesheet" href="/stylesheets/contact.css" />
+<link rel="stylesheet" href="/stylesheets/api-products.css" />
+
+<div class="gray-background"></div>
+<div class="title-row">
+  <div class="heading">All Products</div>
+  <div class="add-btn">Add New Product</div>
+</div>
+<!-- Products will be displayed here -->
+<div class="items"></div>
+<div class="add-product">
+  <form class="contact-form" action="">
+    <span class="heading">Add Product</span>
+    <label for="title">Title</label>
+    <input type="text" name="title" id="title" />
+    <label for="price">Price</label>
+    <input type="number" name="price" id="price" />
+    <label for="description">Description</label>
+    <textarea name="description" id="description" cols="20" rows="5"></textarea>
+    <label for="category">Category</label>
+    <select name="category" id="category">
+      <option value="Audio">Audio</option>
+      <option value="Cameras">Cameras</option>
+      <option value="Gaming">Gaming</option>
+      <option value="Kitchen">Kitchen</option>
+      <option value="Screens">Screens</option>
+      <option value="Watches">Watches</option>
+    </select>
+    <label for="tags">Tags</label>
+    <input
+      type="text"
+      name="tags"
+      id="tags"
+      placeholder="i.e Audio, Headphones"
+    />
+    <label for="specifications">Specifications</label>
+    <input
+      type="text"
+      name="specifications"
+      id="specifications"
+      placeholder="i.e Brand:Apple, Weight:50"
+    />
+    <label for="image">Image</label>
+    <input type="file" name="image" id="image" accept="image/*" />
+    <button type="submit" id="submit">Add Product</button>
+  </form>
+</div>
+<!-- Number of Pages will be displayed here -->
+<div class="pages"></div>
+

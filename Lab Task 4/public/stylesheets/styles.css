@@ -1,0 +1,1016 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+header {
+  height: 20vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 40px;
+  position: relative;
+  z-index: 26;
+}
+
+header .logo {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+header .logo a {
+  text-decoration: none;
+  color: black;
+}
+
+.header-middle {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid rgba(129, 125, 125, 0.3);
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 0.9em;
+}
+
+.category-section {
+  display: flex;
+  gap: 30px;
+  cursor: pointer;
+}
+
+.category-section span {
+  transition: all 0.4s;
+  font-size: 1.2em;
+}
+
+.category-section:hover span {
+  transform: rotate(90deg);
+  color: #2453d4;
+}
+
+.search-section {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.search-section input {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.search-section i {
+  position: relative;
+  font-size: 2em;
+  padding: 7px;
+  border-radius: 10px;
+  transition: color 0.4s, background-position 0.4s;
+  background: linear-gradient(to bottom, transparent 0 50%, #2453d4 50% 100%);
+  background-size: 100% 200%;
+}
+
+.search-section i:hover {
+  background-position: 50% 100%;
+  color: white;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 2em;
+}
+
+.header-right > a {
+  text-decoration: none;
+  color: black;
+}
+
+.header-right a > i,
+.header-right > i {
+  padding: 7px;
+  border-radius: 10px;
+  background: linear-gradient(to top, #2453d4 0 50%, transparent 50% 100%);
+  background-size: 100% 200%;
+  transition: color 0.4s, background-position 0.4s;
+  position: relative;
+}
+
+.header-right a > i:hover,
+.header-right > i:hover {
+  color: white;
+  cursor: pointer;
+  background-position: 100% 100%;
+}
+
+.header-right .login-modal {
+  position: absolute;
+  background-color: #f3f6fb;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  width: 15vw;
+  left: -69px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.login-modal:hover {
+  color: black;
+}
+
+.login-modal .greeting {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.login-modal i {
+  font-size: 73px;
+  border: 2px solid black;
+  border-radius: 50%;
+  padding: 15px;
+}
+
+.login-modal button {
+  background-color: #2453d4;
+  border-radius: 10px;
+  color: white;
+  padding: 5px 15px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  border: none;
+}
+
+.header-right .cart-icon {
+  position: relative;
+}
+
+.header-right .cart-count {
+  position: absolute;
+  color: white;
+  background-color: #2453d4;
+  right: 0px;
+  width: 10px;
+  font-size: 17px;
+  border-radius: 10px;
+  padding: 0px 12px;
+  display: flex;
+  justify-content: center;
+  top: -5px;
+}
+
+#header-menu {
+  display: none;
+}
+
+.mobile-nav {
+  position: absolute;
+  font-size: 13px;
+  top: -150px;
+  left: 0;
+  background-color: white;
+  width: 100vw;
+  padding-left: 20px;
+  z-index: 15;
+  transition: top 0.5s;
+}
+
+header.mobile .mobile-nav {
+  top: 90px;
+}
+
+.mobile-nav ul li {
+  list-style: none;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+nav {
+  background-color: #2453d4;
+  color: white;
+  padding: 0 80px;
+  height: 10vh;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  height: 100%;
+}
+
+nav ul li {
+  list-style: none;
+  font-size: 0.9em;
+  font-weight: bold;
+  cursor: pointer;
+  height: 100%;
+  padding: 0 20px;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li:hover {
+  background-color: #1e39df;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.carousel {
+  margin-bottom: 60px;
+}
+
+.carousel-inner {
+  height: 70vh;
+}
+
+.carousel-item {
+  background-color: #f3f6fb;
+  height: 100%;
+}
+
+.carousel-item-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.carousel-item-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 15px;
+  margin-left: 100px;
+}
+
+.carousel-item-info div {
+  font-weight: bold;
+  font-size: 1.8em;
+}
+
+.carousel-item-info button {
+  background-color: #2453d4;
+}
+
+.carousel-item-info button:hover {
+  background-color: #1e39df;
+}
+
+.carousel-item img {
+  width: 683px;
+  height: 405px;
+  object-fit: contain;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  filter: invert(100%);
+}
+
+.smart-cards {
+  padding: 0 80px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 0 auto;
+  margin-bottom: 60px;
+}
+
+.smart-cards a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.smart-card {
+  display: flex;
+  align-items: center;
+  width: 25%;
+  background-color: #f3f6fb;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 3px gray;
+  cursor: pointer;
+}
+
+.smart-card:hover .smart-card-left span {
+  background-position: 0 100%;
+  color: white;
+}
+
+.smart-card img {
+  width: 100%;
+  min-width: 110px;
+}
+
+.smart-card-title {
+  font-size: 1.4em;
+  font-weight: 500;
+  margin-bottom: 10px;
+  margin-left: 7px;
+}
+
+.smart-card-left span,
+.middle-smart-card .smart-card-left span {
+  font-size: 0.9em;
+  font-weight: 400;
+  padding: 7px;
+  border-radius: 10px;
+  background: linear-gradient(to right, #2453d4 0 50%, transparent 50% 100%);
+  background-size: 200% 100%;
+  background-position: 100% 100%;
+  transition: color 0.4s, background-position 0.4s;
+}
+
+.middle-smart-card .smart-card-left span {
+  background: linear-gradient(to right, white 0 50%, transparent 50% 100%);
+  background-size: 200% 100%;
+  background-position: 100% 100%;
+}
+
+.middle-smart-card:hover .smart-card-left span {
+  background-position: 0 100%;
+  color: black;
+}
+
+.middle-smart-card {
+  width: 50%;
+  height: 165px;
+  background-color: #2453d4;
+  color: white;
+}
+
+.middle-smart-card a {
+  color: white;
+  width: 100%;
+}
+
+.middle-smart-card img {
+  width: 282px;
+}
+
+.separator {
+  padding: 0 80px;
+  margin-bottom: 40px;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.cards {
+  padding: 0 100px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 90vw;
+  margin: auto;
+  gap: 20px;
+}
+
+.card {
+  width: 23%;
+  min-width: 190px;
+  height: 360px;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 0 4px gray;
+  cursor: pointer;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.card > a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  height: 100%;
+  gap: 8px;
+  margin: 0 5%;
+  transition: height 0.5s;
+}
+
+.card > a > i {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.3em;
+  transition: color 0.3s;
+}
+
+.card img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.card .product-title,
+.card .product-price {
+  font-weight: bold;
+  font-size: 0.9em;
+  transition: color 0.3s;
+}
+
+.card .product-price {
+  margin-bottom: 20px;
+}
+
+.card .product-title:hover,
+.card > a > i:hover,
+.rect-card-title:hover,
+.rect-card i:hover {
+  color: #2453d4;
+}
+
+.add-to-cart-strip a {
+  background: linear-gradient(to bottom, transparent 0 50%, #2453d4 50% 100%);
+  background-size: 100% 200%;
+  color: white;
+  padding: 20px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 0 0 10px 10px;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+.card:hover > a {
+  height: 80%;
+}
+
+.card:hover .add-to-cart-strip a {
+  background-position: 100% 100%;
+}
+
+.banner {
+  width: 85vw;
+  height: 40vh;
+  margin: auto;
+  border-radius: 10px;
+  background-color: #f3f6fb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80px;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.banner-left > div {
+  font-weight: bold;
+  font-size: 1.6em;
+}
+
+.banner-right img {
+  width: 700px;
+  transform: rotate(20deg);
+}
+
+.rect-cards {
+  width: 85vw;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 40px;
+}
+
+.rect-card {
+  width: 30%;
+  height: 160px;
+}
+
+.rect-card > a {
+  height: 100%;
+  display: flex;
+  gap: 20px;
+  align-items: start;
+  border: 1px solid rgba(128, 128, 128, 0.4);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 15px;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  color: black;
+}
+
+.rect-card img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.rect-card-title-price {
+  font-weight: bold;
+  line-height: 22px;
+  font-size: 0.9em;
+  margin-top: 15px;
+}
+
+.rect-card-title {
+  transition: color 0.3s;
+}
+
+.rect-card-price {
+  margin-top: 10px;
+}
+
+.rect-card i {
+  position: absolute;
+  right: 10px;
+  transition: color 0.3s;
+}
+
+#cart {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  font-size: 25px;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, transparent 0 50%, #2453d4 50% 100%);
+  background-size: 100% 200%;
+  transition: background-position 0.4s;
+}
+
+.rect-card:hover #cart {
+  background-position: 0 100%;
+}
+
+.success-msg {
+  background-color: #2453d4;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+  border-radius: 10px;
+  position: fixed;
+  bottom: 20px;
+  left: 40%;
+  z-index: 100;
+  padding: 10px 20px;
+  display: none;
+}
+
+.success-msg.active {
+  display: block;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  height: 30vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer > span {
+  font-size: 2.1rem;
+  font-weight: bold;
+  padding-left: 40px;
+}
+
+footer .right {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-end;
+  padding-right: 35px;
+}
+
+footer .legals {
+  display: flex;
+  gap: 12px;
+  font-size: 0.8em;
+  color: rgb(172, 167, 167);
+}
+
+footer .socials {
+  display: flex;
+  gap: 10px;
+  font-size: 1.4em;
+}
+
+.copyright {
+  font-size: 0.8em;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  header {
+    font-size: 14px;
+  }
+
+  .search-section i {
+    background-size: 100% 202%;
+  }
+
+  .smart-cards {
+    font-size: 14px;
+    gap: 20px;
+  }
+
+  .smart-card {
+    width: 29%;
+  }
+
+  .middle-smart-card {
+    width: 50%;
+  }
+
+  .separator {
+    font-size: 1.2em;
+  }
+
+  .cards {
+    padding: 0 35px;
+    font-size: 14px;
+  }
+
+  .banner {
+    padding: 0 35px;
+  }
+
+  .banner-right img {
+    width: 500px;
+  }
+
+  .rect-cards {
+    font-size: 13px;
+  }
+
+  .rect-card > a {
+    height: 100%;
+  }
+
+  #cart {
+    font-size: 24px;
+  }
+
+  footer {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  header {
+    font-size: 12px;
+  }
+
+  .search-section input {
+    width: 140px;
+  }
+
+  nav {
+    font-size: 14px;
+    padding: 0 45px;
+  }
+
+  nav ul {
+    padding: 0;
+  }
+
+  .carousel-inner {
+    height: 50vh;
+  }
+
+  .carousel-item-info {
+    font-size: 14px;
+  }
+
+  .carousel-item-container img {
+    width: 450px;
+  }
+
+  .smart-cards {
+    flex-wrap: wrap;
+    padding: 0 60px;
+  }
+
+  .smart-card,
+  .smart-card > a {
+    width: 100%;
+  }
+
+  .smart-card-left {
+    font-size: 18px;
+  }
+
+  .smart-card > a img {
+    max-width: 170px;
+  }
+
+  .separator {
+    padding: 0 40px;
+  }
+
+  .cards {
+    padding: 0 20px;
+  }
+
+  .card > a {
+    height: 70%;
+    margin-top: 20px;
+  }
+
+  .card img {
+    width: 75%;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+  .add-to-cart-strip a {
+    background-size: 100% 100%;
+    background-color: #2453d4;
+    font-size: 14px;
+  }
+
+  .card:hover > a {
+    height: 70%;
+  }
+
+  .banner {
+    padding: 0 30px;
+    font-size: 14px;
+  }
+
+  .banner-right > img {
+    width: 400px;
+  }
+
+  .rect-cards {
+    flex-wrap: wrap;
+  }
+
+  .rect-card {
+    width: 90%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .rect-card img {
+    width: 30%;
+  }
+
+  .rect-card-title-price {
+    margin-top: 5%;
+  }
+
+  #cart {
+    background-color: #2453d4;
+    font-size: 26px;
+  }
+
+  footer {
+    font-size: 14px;
+  }
+
+  footer > span {
+    font-size: 1.5em;
+  }
+
+  footer .right {
+    padding-right: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    font-size: 12px;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 12vh;
+  }
+
+  .logo {
+    font-size: 1.8em;
+  }
+
+  .header-middle {
+    display: none;
+  }
+
+  .header-right {
+    gap: 20px;
+  }
+
+  #header-menu {
+    display: inline;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .carousel-item-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .carousel-item-info {
+    margin: 55px 0;
+    font-size: 13px;
+    align-items: center;
+  }
+
+  .carousel-item-container > img {
+    width: 70%;
+    height: 40%;
+    margin: auto;
+  }
+
+  .smart-cards {
+    flex-wrap: wrap;
+    padding: 0 50px;
+  }
+
+  .smart-card {
+    width: 100%;
+  }
+
+  .smart-card img {
+    width: 35%;
+  }
+
+  .separator {
+    padding: 0 30px;
+  }
+
+  .cards {
+    padding: 0;
+  }
+
+  .card > a {
+    height: 70%;
+    margin-top: 20px;
+  }
+
+  .card img {
+    width: 75%;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+  .add-to-cart-strip a {
+    background-size: 100% 100%;
+    background-color: #2453d4;
+    font-size: 14px;
+  }
+
+  .card:hover > a {
+    height: 70%;
+  }
+
+  .banner {
+    padding: 0;
+  }
+
+  .banner-left {
+    padding-left: 20px;
+  }
+
+  .banner img {
+    width: 300px;
+  }
+
+  .rect-cards {
+    flex-wrap: wrap;
+  }
+
+  .rect-card {
+    width: 90%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .rect-card img {
+    width: 30%;
+  }
+
+  .rect-card-title-price {
+    margin-top: 5%;
+  }
+
+  #cart {
+    background-color: #2453d4;
+    font-size: 26px;
+  }
+
+  footer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: auto;
+  }
+
+  footer > span {
+    padding: 0 40px;
+  }
+
+  footer .right {
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .separator {
+    padding: 0 20px;
+  }
+
+  .smart-cards {
+    padding: 0 30px;
+  }
+  .smart-card {
+    font-size: 14px;
+  }
+
+  .cards {
+    width: 100vw;
+  }
+
+  .card {
+    height: 270px;
+    min-width: 158px;
+    font-size: 14px;
+  }
+
+  .card > a {
+    gap: 2px;
+  }
+
+  .add-to-cart-strip > a {
+    padding: 14px 15px;
+  }
+
+  .banner {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .banner-left {
+    margin-bottom: 15px;
+  }
+
+  .rect-card {
+    font-size: 14px;
+  }
+
+  .rect-card img {
+    min-width: 80px;
+    margin: auto;
+  }
+
+  #cart {
+    font-size: 18px;
+  }
+
+  footer {
+    font-size: 12px;
+    height: auto;
+  }
+
+  footer > span {
+    width: 90%;
+    margin: auto;
+    padding: 10px 0;
+  }
+
+  footer .right {
+    width: 90%;
+    margin: auto;
+    padding: 0;
+    margin-bottom: 10px;
+  }
+}

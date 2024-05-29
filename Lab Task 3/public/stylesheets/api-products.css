@@ -1,0 +1,114 @@
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80vw;
+  margin: 10vh auto 3vh auto;
+  padding-bottom: 3vh;
+  border-bottom: 1px solid rgba(127, 127, 127, 0.4);
+}
+
+.title-row .heading {
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.add-btn {
+  background-color: #2453d4;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-btn:hover {
+  background-color: #1e39df;
+}
+
+.items {
+  margin-bottom: 0;
+}
+
+.items .item .right .add-to-cart-btn {
+  min-width: 0;
+  padding: 10px 20px;
+}
+
+.items .item .right .delete-btn {
+  background-color: #d91313;
+}
+
+.items .item .right .delete-btn:hover {
+  background-color: #b31414 !important;
+}
+
+.gray-background {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 100;
+}
+
+.add-product {
+  background-color: white;
+  width: 50vw;
+  height: 75vh;
+  position: fixed;
+  top: 20%;
+  left: 23%;
+  border-radius: 10px;
+  overflow-y: auto;
+  display: none;
+  z-index: 101;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.pages {
+  width: 80vw;
+  margin: auto;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10vh;
+}
+
+.pages div {
+  color: white;
+  background-color: #2453d4;
+  padding: 5px 13px;
+  border-radius: 10px;
+  cursor: pointer;
+}

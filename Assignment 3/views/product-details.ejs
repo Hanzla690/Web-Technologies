@@ -1,0 +1,198 @@
+<link rel="stylesheet" href="/stylesheets/product-details.css" />
+
+<main class="product-container">
+  <img src="<%= product.image.url %>" alt="" />
+  <div class="right">
+    <h1><%= product.title %></h1>
+    <span class="product-price">$<%= product.price %></span>
+    <p><%= product.description %></p>
+    <div class="product-rating">
+      <i class="bx bx-star"></i>
+      <i class="bx bx-star"></i>
+      <i class="bx bx-star"></i>
+      <i class="bx bx-star"></i>
+      <i class="bx bx-star"></i>
+    </div>
+    <div class="product-quantity-container">
+      <input type="text" inputmode="numeric" value="1" id="product-quantity" />
+      <div class="quantity-buttons">
+        <i id="quantity-up" class="bx bx-chevron-up"></i>
+        <i id="quantity-down" class="bx bx-chevron-down"></i>
+      </div>
+      <a class="add-to-cart-btn" data-product-id="<%= product._id %>">
+        <div class="add-to-cart">
+          <span>Add to cart</span>
+          <i class="bx bx-cart cart-icon"></i>
+        </div>
+      </a>
+    </div>
+    <div class="add-to-wishlist">
+      <i class="bx bx-heart"></i>
+      <span>Add to wishlist</span>
+    </div>
+    <div class="mini-details">
+      <div class="category">
+        <span class="tag-title">Category:</span>
+        <span class="tag"><%= product.category %></span>
+      </div>
+      <div class="tags">
+        <span class="tag-title">Tags:</span>
+        <% for (let tag of product.tags){ %>
+        <span class="tag"><%= tag %></span>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</main>
+<section class="info-container" id="info-container">
+  <div class="info-selector">
+    <span id="specifications-btn" class="info button-active"
+      >Specifications</span
+    >
+    <span id="reviews-btn" class="info">Reviews</span>
+  </div>
+  <div class="specifications info-details" id="specifications">
+    <% for (let key in product.specifications){ %>
+    <div class="specification-item">
+      <div class="specification-title"><%= key %></div>
+      <div class="specification-value"><%= product.specifications[key] %></div>
+    </div>
+    <% } %>
+  </div>
+  <div class="reviews info-details" id="reviews">
+    <div class="left">
+      <span>Customer Reviews</span>
+      <div class="customer-reviews">
+        <i class="bx bx-star"></i>
+        <i class="bx bx-star"></i>
+        <i class="bx bx-star"></i>
+        <i class="bx bx-star"></i>
+        <i class="bx bx-star"></i>
+        <span>4.7 out of 5</span>
+      </div>
+      <div class="review-progress-bars">
+        <div class="review-rating">
+          <span>5 star</span>
+          <div class="progress-bar-container">
+            <div class="progress-bar"></div>
+          </div>
+          <span>88%</span>
+        </div>
+        <div class="review-rating">
+          <span>4 star</span>
+          <div class="progress-bar-container">
+            <div class="progress-bar"></div>
+          </div>
+          <span>5%</span>
+        </div>
+        <div class="review-rating">
+          <span>3 star</span>
+          <div class="progress-bar-container">
+            <div class="progress-bar"></div>
+          </div>
+          <span>2%</span>
+        </div>
+        <div class="review-rating">
+          <span>2 star</span>
+          <div class="progress-bar-container">
+            <div class="progress-bar"></div>
+          </div>
+          <span>1%</span>
+        </div>
+        <div class="review-rating">
+          <span>1 star</span>
+          <div class="progress-bar-container">
+            <div class="progress-bar"></div>
+          </div>
+          <span>4%</span>
+        </div>
+      </div>
+      <span>Review this Product</span>
+      <div>Share your thoughts with other customers</div>
+      <button class="review-btn">Write a Review</button>
+    </div>
+    <div class="right">
+      <div class="customer-review">
+        <div class="customer-name-pic">
+          <i class="bx bx-user"></i>
+          <span>John Doe</span>
+        </div>
+        <div class="customer-rating-title">
+          <div class="customer-rating">
+            <i class="bx bx-star"></i>
+            <i class="bx bx-star"></i>
+            <i class="bx bx-star"></i>
+            <i class="bx bx-star"></i>
+            <i class="bx bx-star"></i>
+            <div class="review-title">Great Product</div>
+          </div>
+        </div>
+        <div class="review-description">
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat
+            facilis quibusdam aspernatur aliquid eveniet? Eos esse sint illum,
+            perspiciatis magni aperiam hic, ab praesentium harum officia
+            delectus, tempore quibusdam obcaecati maxime voluptatum
+            reprehenderit voluptatibus quia!
+          </p>
+        </div>
+        <div class="review-date">Reviewed on April 1, 2024</div>
+      </div>
+      <div class="customer-review">
+        <div class="customer-name-pic">
+          <i class="bx bx-user"></i>
+          <span>John Doe</span>
+        </div>
+        <div class="customer-rating-title">
+          <div class="customer-rating">
+            <i class="bx bx-star"></i>
+            <i class="bx bx-star"></i>
+            <i class="bx bx-star"></i>
+            <i class="bx bx-star"></i>
+            <i class="bx bx-star"></i>
+            <div class="review-title">Great Product</div>
+          </div>
+        </div>
+        <div class="review-description">
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat
+            facilis quibusdam aspernatur aliquid eveniet? Eos esse sint illum,
+            perspiciatis magni aperiam hic, ab praesentium harum officia
+            delectus, tempore quibusdam obcaecati maxime voluptatum
+            reprehenderit voluptatibus quia!
+          </p>
+        </div>
+        <div class="review-date">Reviewed on April 1, 2024</div>
+      </div>
+      <div class="customer-review">
+        <div class="customer-name-pic">
+          <i class="bx bx-user"></i>
+          <span>John Doe</span>
+        </div>
+        <div class="customer-rating-title">
+          <div class="customer-rating">
+            <i class="bx bx-star"></i>
+            <i class="bx bx-star"></i>
+            <i class="bx bx-star"></i>
+            <i class="bx bx-star"></i>
+            <i class="bx bx-star"></i>
+            <div class="review-title">Great Product</div>
+          </div>
+        </div>
+        <div class="review-description">
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat
+            facilis quibusdam aspernatur aliquid eveniet? Eos esse sint illum,
+            perspiciatis magni aperiam hic, ab praesentium harum officia
+            delectus, tempore quibusdam obcaecati maxime voluptatum
+            reprehenderit voluptatibus quia!
+          </p>
+        </div>
+        <div class="review-date">Reviewed on April 1, 2024</div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</section>
+
+<div class="success-msg">Product Added to Cart</div>

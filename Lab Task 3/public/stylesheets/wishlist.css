@@ -1,0 +1,134 @@
+.title {
+  width: 80vw;
+  margin: 10vh auto 3vh auto;
+  font-weight: bold;
+  font-size: 28px;
+  padding-bottom: 3vh;
+  border-bottom: 1px solid rgba(127, 127, 127, 0.4);
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  margin: auto;
+  margin-bottom: 10vh;
+}
+
+.items .item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 3vh;
+  margin-bottom: 3vh;
+  border-bottom: 1px solid rgba(127, 127, 127, 0.4);
+}
+
+.items .item .left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.items .item .left a {
+  text-decoration: none;
+  color: black;
+}
+
+.items .item .left i {
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.items .item .left i:hover {
+  color: #2453d4;
+}
+
+.items .item .left img {
+  width: 84px;
+}
+
+.items .item .left div {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.items .item .right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.items .item .right .price {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.items .item .right .add-to-cart-btn, .add-to-cart-btn {
+  background-color: #2453d4;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  min-width: 152px;
+  transition: background-color 0.3s;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #1e39df !important;
+}
+
+.add-to-cart-btn span {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 900px) {
+  .items .item .left {
+    gap: 20px;
+  }
+
+  .add-to-cart-btn span {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .items .item .left img {
+    display: none;
+  }
+
+  .items .item .right .price {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 585px) {
+  .items .item .left {
+    gap: 15px;
+  }
+
+  .items .item .right {
+    gap: 15px;
+  }
+
+  .items .item .right .price {
+    font-size: 14px;
+  }
+
+  .items .item .right .add-to-cart-btn {
+    flex-direction: column;
+    min-width: 85px;
+    padding: 10px;
+    gap: 5px;
+  }
+
+  .add-to-cart-btn span {
+    text-align: center;
+  }
+}

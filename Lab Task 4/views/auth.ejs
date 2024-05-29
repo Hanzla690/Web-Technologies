@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="/stylesheets/auth.css" />
+
+<div class="background">
+  <main class="container" id="container">
+    <div class="formContainer">
+      <% if (!user) { %>
+      <form action="/auth/login" method="post">
+        <div class="signIn">
+          <h1>Sign In</h1>
+          <input type="email" name="email" id="" placeholder="Email" required />
+          <input
+            type="password"
+            name="password"
+            id=""
+            placeholder="Password"
+            required
+          />
+          <a href="#" class="forgotPassword">Forgot your Password?</a>
+          <button type="submit" class="signInBtn">Sign In</button>
+        </div>
+      </form>
+      <% } else {%>
+      <form action="/auth/logout" method="post">
+        <div class="signIn">
+          <h1>Welcome <br /><%= user.username %></h1>
+          <button type="submit" class="signInBtn">Logout</button>
+        </div>
+      </form>
+      <% } %>
+      <form action="">
+        <div class="signUp">
+          <h1>Create Account</h1>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Name"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email"
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+          <button class="signInBtn" id="signUpBtn">Sign Up</button>
+        </div>
+      </form>
+    </div>
+    <div class="toggleContainer">
+      <div class="right">
+        <h1>Hello, Friend</h1>
+        <p>Register with your personal details to use all the features</p>
+        <button class="signUpBtn" id="signUptoggle">Sign Up</button>
+      </div>
+      <div class="left">
+        <h1>Welcome Back</h1>
+        <p>Enter your personal details to use all the features</p>
+        <button class="signUpBtn" id="signIntoggle">Sign In</button>
+      </div>
+    </div>
+  </main>
+</div>
+
+<div class="success-msg">User created Succesfully</div>

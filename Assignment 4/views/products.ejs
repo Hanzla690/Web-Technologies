@@ -1,0 +1,61 @@
+<link rel="stylesheet" href="/stylesheets/products.css" />
+
+<div class="category-icons">
+  <div class="item">
+    <i class="bx bx-grid-alt"></i>
+    <div>Show All</div>
+  </div>
+  <div class="item">
+    <i class="bx bx-headphone"></i>
+    <div>Audio</div>
+  </div>
+  <div class="item">
+    <i class="bx bx-camera"></i>
+    <div>Cameras</div>
+  </div>
+  <div class="item">
+    <i class="bx bx-joystick"></i>
+    <div>Gaming</div>
+  </div>
+  <div class="item">
+    <i class="bx bx-fridge"></i>
+    <div>Kitchen</div>
+  </div>
+  <div class="item">
+    <i class="bx bx-desktop"></i>
+    <div>Screens</div>
+  </div>
+  <div class="item">
+    <i class="bx bxs-watch-alt"></i>
+    <div>Watches</div>
+  </div>
+</div>
+<div class="result-sort-row">
+  <div class="results">Showing 1-20 of 25 results</div>
+  <div class="sort">Sort</div>
+</div>
+<div class="cards">
+  <% for (let product of products){ %>
+  <div class="card">
+    <a href="products/<%=product._id %>">
+      <i class="bx bx-heart"></i>
+      <img src="<%= product.image.url %>" alt="" />
+      <div class="product-title"><%=product.title %></div>
+      <div class="product-price">$<%=product.price %></div>
+    </a>
+    <div class="add-to-cart-strip">
+      <a class="add-to-cart-btn" data-product-id="<%= product._id %>">
+        <div class="div">Add to Cart</div>
+        <i class="bx bx-cart cart-icon"></i>
+      </a>
+    </div>
+  </div>
+  <% } %>
+</div>
+<div class="pages">
+  <% for( let i = 1; i <= totalPages; i++ ) { %>
+  <a href="/products?pageNumber=<%= i %>"><%= i %></a>
+  <% } %>
+</div>
+
+<div class="success-msg">Product Added to Cart</div>

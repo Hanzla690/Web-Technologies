@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="/stylesheets/wishlist.css" />
+<link rel="stylesheet" href="/stylesheets/cart.css" />
+
+<div class="title">My Cart</div>
+<div class="headings">
+  <div class="left">Product Details</div>
+  <div class="right">
+    <div>Price</div>
+    <div>Quantity</div>
+    <div>Subtotal</div>
+  </div>
+</div>
+<div class="items">
+  <% products.forEach(product => { %>
+  <div class="item">
+    <div class="left">
+      <a href="/cart/remove/<%= product._id %>">
+        <i class="bx bx-x"></i>
+      </a>
+      <img src="<%= product.image.url %>" alt="" />
+      <div class="product-title" data-product-id="<%= product._id %>">
+        <%= product.title %>
+      </div>
+    </div>
+    <div class="right">
+      <div class="price">$<%= product.price %></div>
+      <div class="product-quantity-container">
+        <input
+          type="text"
+          inputmode="numeric"
+          value="<%= product.quantity %>"
+          class="product-quantity"
+        />
+        <div class="quantity-buttons">
+          <i class="bx bx-chevron-up quantity-up"></i>
+          <i class="bx bx-chevron-down quantity-down"></i>
+        </div>
+      </div>
+      <div class="price">$<%= product.price * product.quantity %></div>
+    </div>
+  </div>
+  <% }) %>
+</div>
+<div class="checkout-btn-container update-cart">
+  <div class="checkout-btn update-cart-btn">
+    <div>Update Cart</div>
+  </div>
+</div>
+<div class="title total">Cart Total</div>
+<div class="total-container">
+  <div>Total</div>
+  <div class="total-price">$<%= total %></div>
+</div>
+<div class="checkout-btn-container">
+  <div class="checkout-btn">
+    <div>Proceed to Checkout</div>
+    <i class="bx bx-cart"></i>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+.category-icons {
+  width: 90vw;
+  margin: 10vh auto;
+  display: flex;
+  gap: 100px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.category-icons .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+}
+
+.category-icons .item i {
+  font-size: 43px;
+}
+
+.category-icons .item div {
+  font-size: 14px;
+  font-weight: bold;
+  color: gray;
+}
+
+.result-sort-row {
+  width: 73vw;
+  margin: auto;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.result-sort-row .results {
+  color: gray;
+}
+
+.pages {
+  width: 80vw;
+  margin: auto;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10vh;
+}
+
+.pages a {
+  text-decoration: none;
+  color: white;
+  background-color: #2453d4;
+  padding: 5px 13px;
+  border-radius: 10px;
+}

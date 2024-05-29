@@ -1,0 +1,162 @@
+.background {
+  height: 100vh;
+  width: 100vw;
+  padding-top: 15vh;
+  background-color: #c9d6ff;
+  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+}
+
+.container {
+  position: relative;
+  height: 65vh;
+  width: 50vw;
+  margin: auto;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0px 0px 20px gray;
+  text-align: center;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.formContainer {
+  width: 60%;
+  height: 100%;
+  position: relative;
+  transition: all 1s ease-in-out;
+}
+
+.signIn,
+.signUp {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 2;
+  transition: all 1s ease-in-out;
+}
+
+.signUp {
+  opacity: 0;
+  z-index: 1;
+  transition: all 1s ease-in-out;
+}
+
+.formContainer input {
+  width: 75%;
+  height: 40px;
+  border: none;
+  outline: none;
+  background-color: #eee;
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+
+.formContainer input::placeholder {
+  font-size: 12px;
+}
+
+.forgotPassword {
+  font-size: 12px;
+  text-decoration: none;
+  color: gray;
+}
+
+.signInBtn {
+  padding: 8px 28px;
+  border-radius: 5px;
+  border: none;
+  background-color: #2453d4;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.toggleContainer {
+  height: 100%;
+  width: 45%;
+  background-color: #2453d4;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  border-radius: 80px 12px 12px 80px;
+  transition: all 1s ease-in-out;
+  position: relative;
+}
+
+.toggleContainer .right,
+.toggleContainer .left {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+  transition: all 1s ease-in-out;
+  position: absolute;
+}
+
+.toggleContainer .left {
+  z-index: 1;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.toggleContainer .right > p {
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.toggleContainer .left p {
+  font-size: 12px;
+}
+
+.signUpBtn {
+  background: transparent;
+  color: white;
+  padding: 8px 28px;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.container.active .formContainer {
+  transform: translateX(80%);
+}
+
+.container.active .signUp {
+  opacity: 1;
+}
+
+.container.active .signIn {
+  opacity: 0;
+  z-index: -11;
+}
+
+.container.active .toggleContainer {
+  transform: translateX(-120%);
+  border-radius: 12px 80px 80px 12px;
+  width: 50%;
+}
+
+.container.active .left {
+  opacity: 1;
+  z-index: 22;
+}
+
+.container.active .right {
+  opacity: 0;
+}
