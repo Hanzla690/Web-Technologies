@@ -1,0 +1,19 @@
+<div class="separator">Visited Products</div>
+<div class="cards">
+  <% for (let product of products){ %>
+  <div class="card">
+    <a href="products/<%=product._id %>">
+      <i class="bx bx-heart"></i>
+      <img src="<%= product.image.url %>" alt="" />
+      <div class="product-title"><%=product.title %></div>
+      <div class="product-price">$<%=product.price %></div>
+    </a>
+    <div class="add-to-cart-strip">
+      <a class="add-to-cart-btn" data-product-id="<%= product._id %>">
+        <div class="div">Add to Cart</div>
+        <i class="bx bx-cart cart-icon"></i>
+      </a>
+    </div>
+  </div>
+  <% } %>
+</div>

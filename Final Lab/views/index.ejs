@@ -1,0 +1,131 @@
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active w-100">
+      <div class="carousel-item-container">
+        <div class="carousel-item-info">
+          <div>Smart Watches</div>
+          <button class="btn btn-primary">Shop Now &gt;</button>
+        </div>
+        <img src="assets/carousel-image-1.png" class="d-block" alt="..." />
+      </div>
+    </div>
+    <div class="carousel-item w-100">
+      <div class="carousel-item-container">
+        <div class="carousel-item-info">
+          <div>Mobile Phones</div>
+          <button class="btn btn-primary">Shop Now &gt;</button>
+        </div>
+        <img src="assets/carousel-image-2.jpg" class="d-block" alt="..." />
+      </div>
+    </div>
+    <div class="carousel-item w-100">
+      <div class="carousel-item-container">
+        <div class="carousel-item-info">
+          <div>Camera Drones</div>
+          <button class="btn btn-primary">Shop Now &gt;</button>
+        </div>
+        <img src="assets/carousel-image-3.png" class="d-block" alt="..." />
+      </div>
+    </div>
+  </div>
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#carouselExample"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#carouselExample"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<div class="smart-cards">
+  <div class="smart-card">
+    <a href="#">
+      <div class="smart-card-left">
+        <div class="smart-card-title">Headphones</div>
+        <span>Buy Now &gt;</span>
+      </div>
+      <img src="assets/smart-card-image-1.png" alt=""
+    /></a>
+  </div>
+  <div class="smart-card middle-smart-card">
+    <a href="#">
+      <div class="smart-card-left">
+        <div class="smart-card-title">Smart Televisions</div>
+        <span>Buy Now &gt;</span>
+      </div>
+      <img src="assets/smart-card-image-2.png" alt="" />
+    </a>
+  </div>
+  <div class="smart-card">
+    <a href="#">
+      <div class="smart-card-left">
+        <div class="smart-card-title">Consoles</div>
+        <span>Buy Now &gt;</span>
+      </div>
+      <img
+        src="assets/smart-card-image-3.png"
+        style="min-width: 170px"
+        alt=""
+      />
+    </a>
+  </div>
+</div>
+<div class="separator">Featured Products</div>
+
+<div class="cards">
+  <% for (let product of products){ %>
+  <div class="card">
+    <a href="products/<%=product._id %>">
+      <i class="bx bx-heart"></i>
+      <img src="<%= product.image.url %>" alt="" />
+      <div class="product-title"><%=product.title %></div>
+      <div class="product-price">$<%=product.price %></div>
+    </a>
+    <div class="add-to-cart-strip">
+      <a class="add-to-cart-btn" data-product-id="<%= product._id %>">
+        <div class="div">Add to Cart</div>
+        <i class="bx bx-cart cart-icon"></i>
+      </a>
+    </div>
+  </div>
+  <% } %>
+</div>
+<div class="banner">
+  <div class="banner-left">
+    <div class="div">
+      Get Great Deals<br />
+      on Variety of Items
+    </div>
+  </div>
+  <div class="banner-right">
+    <img src="assets/banner-img.png" alt="" />
+  </div>
+</div>
+
+<div class="separator">Top Rated Products</div>
+<div class="rect-cards">
+  <% for( let i = 0; i < 3; i++ ) { %>
+  <div class="rect-card">
+    <a href="products/<%=products[i]._id %>">
+      <img src="<%= products[i].image.url %>" alt="" />
+      <div class="rect-card-title-price">
+        <div class="rect-card-title"><%= products[i].title %></div>
+        <div class="rect-card-price">$<%= products[i].price %></div>
+      </div>
+      <i class="bx bx-heart"></i>
+      <i id="cart" class="bx bx-cart"></i>
+    </a>
+  </div>
+  <% } %>
+</div>
+<div class="success-msg">Product Added to Cart</div>
